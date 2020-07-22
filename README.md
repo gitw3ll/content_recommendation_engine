@@ -8,7 +8,7 @@ uses [Scrapy](https://scrapy.org/)
 
 files:
 - `medium_scraper_tag_archive.py` : bulk scraper code
-- `scrapy_wrapper.py`: wrapper to run `medium_scrapper_tag_archive.py` and set parameters
+- `scrapy_wrapper.py`: wrapper to run `medium_scraper_tag_archive.py` and set parameters
 - `reading_scraped_data.ipynb`: notebook to analyze scraped data
 
 output:
