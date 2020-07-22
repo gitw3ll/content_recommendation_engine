@@ -6,9 +6,9 @@ start_date = '20170101'
 end_date = '20200701'
 # end_date = '20200201'
 tag = 'wellness'
-output_dir = 'scrapped_data/'
+output_dir = 'scraped_data/'
 output_file = output_dir+start_date+tag+end_date+'.json'
-scrapper_file = 'medium_scrapper_tag_archive.py'
+scrapper_file = 'medium_scraper_tag_archive.py'
 log_file = 'logs/'+start_date+tag+end_date+'.log'
 
 if os.path.exists(output_file):
