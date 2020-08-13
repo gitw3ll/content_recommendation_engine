@@ -16,7 +16,7 @@ def write_top_json(articles):
     with open('top_articles.json', 'w') as f:
         f.write(top_articles.to_json())
 
-dir = './scraping/scraped_data/'
+dir = '../scraping/scraped_data/'
 file = '20170101wellness20200701.json'
 articles = pd.read_json(dir+file)
 write_top_json(articles)
