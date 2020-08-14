@@ -21,7 +21,7 @@ from scrapy.exporters import JsonItemExporter
 class MediumPost(scrapy.Spider):
     name='medium_scrapper'
     custom_settings = {
-        'DOWNLOAD_DELAY': 1,
+        'DOWNLOAD_DELAY': 0.17,
     }
     total_articles = 0
     def start_requests(self):
