@@ -1,15 +1,13 @@
 import os
 
 
-start_date = '20170101'
-# start_date = '20200101'
+start_date = '20180101'
 end_date = '20200701'
-# end_date = '20200201'
-tag = 'wellness'
+tag = 'health'
 output_dir = 'scraped_data/'
-output_file = output_dir+start_date+tag+end_date+'.json'
+output_file = output_dir+start_date+tag+end_date+'_2.json'
 scrapper_file = 'medium_scraper_tag_archive.py'
-log_file = 'logs/'+start_date+tag+end_date+'.log'
+log_file = 'logs/'+start_date+tag+end_date+'_2.log'
 
 if os.path.exists(output_file):
     os.remove(output_file)
