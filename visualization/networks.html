@@ -50,12 +50,7 @@ d3.json("music_wellness_life.json", function(error, graph) {
       for (var i = 0; i < item['group'].length; i++) {
           item['pieChart'].push({ "color": item['group'][i], "percent": percent })
       }
-      // item['pieChart'] = [
-      //   { "color": 1, "percent": 40 },
-      //   { "color": 2, "percent": 20 },
-      //   { "color": 3, "percent": 20 },
-      //   { "color": 4, "percent": 20 }
-      // ]
+
   });
   console.log(graph.nodes);
 
@@ -72,36 +67,25 @@ d3.json("music_wellness_life.json", function(error, graph) {
     .selectAll("g")
     .data(graph.nodes)
     .enter().append("g")
-    .call(d3.drag()
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended));
 
-  // var circles = node.append("circle")
-  //     .attr("r", radius)
-  //     .attr('opacity', 1)
-  //     .attr("fill", function(d) { return color(d.group); })
-  //     .call(d3.drag()
-  //         .on("start", dragstarted)
-  //         .on("drag", dragged)
-  //         .on("end", dragended));
   node.each(function (d) {
              NodePieBuilder.drawNodePie(d3.select(this), d.pieChart, {
-                 
+                 'radius':d.postCount/10000
+
             });
         });
-
+// labels
   var labels = node.append("text")
       .text(function(d) {
         return d.id;
       })
       .attr("text-anchor", "middle")
-      // .attr('x', 0)
       .attr('y', 0.3*radius);
 
   node.append("title")
       .text(function(d) { return d.id; });
 
+//simulation
   simulation
       .nodes(graph.nodes)
       .on("tick", ticked);
@@ -122,22 +106,5 @@ d3.json("music_wellness_life.json", function(error, graph) {
         })
   }
 });
-
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
 
 </script>
