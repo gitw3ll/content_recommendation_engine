@@ -1,0 +1,289 @@
+{
+    "nodes": [
+        {
+            "id": "music",
+            "postCount": 221651,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "hip-hop",
+            "postCount": 24820,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "culture",
+            "postCount": 115669,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "rock",
+            "postCount": 9934,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "art",
+            "postCount": 142724,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "poetry",
+            "postCount": 387491,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "life",
+            "postCount": 446888,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "pop-culture",
+            "postCount": 13870,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "music-business",
+            "postCount": 6461,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "rap",
+            "postCount": 10585,
+            "group": [
+                0
+            ]
+        },
+        {
+            "id": "life-lessons",
+            "postCount": 397205,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "self-improvement",
+            "postCount": 272560,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "love",
+            "postCount": 309848,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "writing",
+            "postCount": 276678,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "inspiration",
+            "postCount": 120035,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "relationships",
+            "postCount": 175404,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "self",
+            "postCount": 71141,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "entrepreneurship",
+            "postCount": 311364,
+            "group": [
+                1
+            ]
+        },
+        {
+            "id": "health",
+            "postCount": 326233,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "fitness",
+            "postCount": 75733,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "food",
+            "postCount": 155101,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "mental-health",
+            "postCount": 158176,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "healthcare",
+            "postCount": 93110,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "nutrition",
+            "postCount": 28325,
+            "group": [
+                2
+            ]
+        },
+        {
+            "id": "weight-loss",
+            "postCount": 41617,
+            "group": [
+                2
+            ]
+        }
+    ],
+    "links": [
+        {
+            "source": "music",
+            "target": "hip-hop"
+        },
+        {
+            "source": "music",
+            "target": "culture"
+        },
+        {
+            "source": "music",
+            "target": "rock"
+        },
+        {
+            "source": "music",
+            "target": "art"
+        },
+        {
+            "source": "music",
+            "target": "poetry"
+        },
+        {
+            "source": "music",
+            "target": "life"
+        },
+        {
+            "source": "music",
+            "target": "pop-culture"
+        },
+        {
+            "source": "music",
+            "target": "music-business"
+        },
+        {
+            "source": "music",
+            "target": "rap"
+        },
+        {
+            "source": "poetry",
+            "target": "life"
+        },
+        {
+            "source": "life",
+            "target": "life-lessons"
+        },
+        {
+            "source": "life",
+            "target": "self-improvement"
+        },
+        {
+            "source": "life",
+            "target": "love"
+        },
+        {
+            "source": "life",
+            "target": "writing"
+        },
+        {
+            "source": "life",
+            "target": "inspiration"
+        },
+        {
+            "source": "life",
+            "target": "relationships"
+        },
+        {
+            "source": "life",
+            "target": "self"
+        },
+        {
+            "source": "life",
+            "target": "entrepreneurship"
+        },
+        {
+            "source": "life",
+            "target": "health"
+        },
+        {
+            "source": "life-lessons",
+            "target": "health"
+        },
+        {
+            "source": "self-improvement",
+            "target": "health"
+        },
+        {
+            "source": "health",
+            "target": "fitness"
+        },
+        {
+            "source": "health",
+            "target": "food"
+        },
+        {
+            "source": "health",
+            "target": "mental-health"
+        },
+        {
+            "source": "health",
+            "target": "healthcare"
+        },
+        {
+            "source": "health",
+            "target": "nutrition"
+        },
+        {
+            "source": "health",
+            "target": "weight-loss"
+        }
+    ]
+}
