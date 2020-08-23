@@ -9,10 +9,6 @@ tag = 'health'
 output_dir = 'scraped_data/'
 scrapper_file = 'medium_scraper_tag_archive.py'
 
-
-if os.path.exists(output_file):
-    os.remove(output_file)
-
 #command line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('-tag', default=tag)
@@ -23,6 +19,9 @@ args = parser.parse_args()
 #output files
 log_file = 'logs/'+start_date+'_'+args.tag+'_'+end_date+'.log'
 output_file = output_dir+start_date+'_'+args.tag+'_'+end_date+'.json'
+
+if os.path.exists(output_file):
+    os.remove(output_file)
 
 print('START DATE: '+args.start_date)
 print('END DATE: '+args.end_date)
