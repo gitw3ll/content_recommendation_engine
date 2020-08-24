@@ -1,0 +1,15 @@
+{
+  "nodes": [
+    {"id": "health"},
+    {"id": "wellness"},
+    {"id": "life"},
+    {"id": "music"},
+    {"id": "wellbeing"}
+  ],
+  "links": [
+    {"source": "health", "target": "wellness"},
+    {"source": "health", "target": "life"},
+    {"source": "life", "target": "music"},
+    {"source": "health", "target": "wellbeing"}
+  ]
+}
