@@ -39,16 +39,19 @@ class MediumPost(scrapy.Spider):
             yield scrapy.Request(start_url)
 
 
-    def parse(self,response):
+    def parse(self,response, parsed_data=None):
 
         response_data=response.text
-
-        #turn text into dictionary
+        #for literal Evaluation
         true = True
         false = False
-        response_data = eval(re.findall('window\["obvInit"\]\((.+)\)', response_data)[0])
+        null = None
+
+
 
         if response._url in self.start_urls:
+            #turn text into dictionary
+            response_data = eval(re.findall('window\["obvInit"\]\((.+)\)', response_data)[0])
 
             user_data = response_data['references']['User']
             #user_data keywords: ['userId', 'name', 'username', 'createdAt', 'imageId', 'backgroundImageId', 'bio', 'twitterScreenName', 'allowNotes', 'mediumMemberAt', 'isWriterProgramEnrolled', 'isSuspended', 'isMembershipTrialEligible', 'optInToIceland', 'type']
@@ -102,46 +105,53 @@ class MediumPost(scrapy.Spider):
                             "url": urls[i]}
 
                 if int(clap_count[i])>=int(self.clap_limit):
-                    yield parsed_data
+                    if self.include_body:
+                        yield scrapy.Request(urls[i],callback=self.parse, cb_kwargs={'parsed_data':parsed_data})
+                    else:
+                        yield parsed_data
                 else:
                     continue
 
-        else:
-            import pdb; pdb.set_trace()
-            date = re.findall('"datePublished":"([0-9-]+)T', response_data)[0]
 
-            try:
-                tags= set(re.findall('"Tag:([a-z-]+)"', response_data))
-            except:
-                tags = re.findall('href="/tag/([\w-]+?)"', response_data)
+        else: #if including body_text we need to go to each article page
+            #turn page text into dictionary
+            response_data = eval(re.findall('<script>window.__APOLLO_STATE__ =(.+?)</script>', response_data)[0])
+            #body text in Paragraph entries
+            paragraph_keys = [key for key in response_data.keys() if "Paragraph:" in key and "." not in key]
 
-            css_title = response.css('title::text').getall()[0].split(' | ')
-            try:
-                #doesn't work for all, but when it does it works better than css_title[0]
-                title = re.findall('"og:title" content="([\w .:,?!-/“]+)"', response_data)[0]
-            except:
-                title = css_title[0]
-            try:
-                author = re.findall('name="author" content="([\w .:,-]+)"', response_data)[0]
-            except:
-                author = css_title[1][3:] #remove "by "
+            body_text = ''
+            for paragraph_key in paragraph_keys:
+                    body_text+=response_data[paragraph_key]['text']
 
-            responses_count = int(re.findall('"responsesCount":([0-9]+)', response_data)[0])
-            claps = int(re.findall('"clapCount":([0-9]+)', response_data)[0])
-            length = int(re.findall('value="([0-9]+) min read"', response_data)[0])
-            url = response._url
-            comments = None
-            author_bio = None
-            subtitle = None
 
-            parsed_data = {"date":date,
-                        "tags":tags,
-                        "title":title,
-                        "author":author,
-                        "claps":claps,
-                        "length":length,
-                        "url":url,
-                        "responses_count": responses_count}
+
+            # date = re.findall('"datePublished":"([0-9-]+)T', response_data)[0]
+            #
+            # try:
+            #     tags= set(re.findall('"Tag:([a-z-]+)"', response_data))
+            # except:
+            #     tags = re.findall('href="/tag/([\w-]+?)"', response_data)
+            #
+            # css_title = response.css('title::text').getall()[0].split(' | ')
+            # try:
+            #     #doesn't work for all, but when it does it works better than css_title[0]
+            #     title = re.findall('"og:title" content="([\w .:,?!-/“]+)"', response_data)[0]
+            # except:
+            #     title = css_title[0]
+            # try:
+            #     author = re.findall('name="author" content="([\w .:,-]+)"', response_data)[0]
+            # except:
+            #     author = css_title[1][3:] #remove "by "
+            #
+            # responses_count = int(re.findall('"responsesCount":([0-9]+)', response_data)[0])
+            # claps = int(re.findall('"clapCount":([0-9]+)', response_data)[0])
+            # length = int(re.findall('value="([0-9]+) min read"', response_data)[0])
+            # url = response._url
+            # comments = None
+            # author_bio = None
+            # subtitle = None
+
+            parsed_data['body'] = body_text
 
 
             yield parsed_data

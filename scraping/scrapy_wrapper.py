@@ -16,6 +16,7 @@ parser.add_argument('-tag', default=tag)
 parser.add_argument('-start_date', default=start_date)
 parser.add_argument('-end_date', default=end_date)
 parser.add_argument('-clap_limit', default=clap_limit)
+parser.add_argument('--include_body', action='store_true')
 args = parser.parse_args()
 
 #output files
@@ -29,5 +30,6 @@ print('START DATE: '+args.start_date)
 print('END DATE: '+args.end_date)
 print('TAG: '+args.tag)
 print('>= {0} CLAPS'.format(args.clap_limit))
+print('INCLUDE BODY = {0}'.format(args.include_body))
 
-os.system('scrapy runspider -a tag={tag} -a start_date={start_date} -a end_date={end_date} -a clap_limit={clap_limit} --logfile {log_file} {scrapper_file} -o {output_file}'.format(tag=args.tag,start_date=args.start_date,end_date=args.end_date,clap_limit=args.clap_limit,scrapper_file=scrapper_file,output_file=output_file, log_file = log_file))
+os.system('scrapy runspider -a tag={tag} -a start_date={start_date} -a end_date={end_date} -a clap_limit={clap_limit} -a include_body={include_body} --logfile {log_file} {scrapper_file} -o {output_file}'.format(tag=args.tag,start_date=args.start_date,end_date=args.end_date,clap_limit=args.clap_limit,include_body=args.include_body,scrapper_file=scrapper_file,output_file=output_file, log_file = log_file))
