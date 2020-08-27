@@ -74,13 +74,21 @@ d3.json("music_health_life.json", function(error, graph) {
 
             });
         });
+
 // labels
   var labels = node.append("text")
       .text(function(d) {
         return d.id;
       })
       .attr("text-anchor", "middle")
-      .attr('y', 0.3*radius);
+      .attr('y',function(d) {
+        var node_radius = d.postCount/10000
+        if (this.getComputedTextLength()<2*node_radius) {
+              return 0.3*radius
+      } else {
+          console.log(this);
+          return node_radius+10
+      }});
 
   node.append("title")
       .text(function(d) { return d.id; });
