@@ -19,7 +19,7 @@ text {
 }
 
 </style>
-<svg width="960" height="900"></svg>
+<svg width="1960" height="1900"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="node-pie.js"></script>
 <script>
@@ -29,30 +29,60 @@ var svg = d3.select("svg"),
     height = +svg.attr("height"),
     radius = 20;
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scaleOrdinal(d3.schemeCategory20)
+
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(100))
+    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(function(d){
+        if (d.invisible) {
+            return 0;
+        } else {
+            return 200
+        }}).iterations(1))
     .force("charge", d3.forceManyBody()
-                            .strength(-600)
-                            .distanceMax(height/2))
+                            .strength(-300)
+                            .distanceMax(height))
 
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(radius).iterations(10));
+    .force("collide", d3.forceCollide(function(d) { return d.postCount/10000}).strength(10).iterations(1));
+
+function getTextWidth(text) {
+    // font = font = d3.select('text').style('font-size') + ' ' + d3.select('text').style('font-family')
+    font = '15px sans-serif'
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+}
 
 d3.json("music_health_life.json", function(error, graph) {
   if (error) throw error;
 
   //add pie chart info
+  // graph.nodes.forEach((item, i) => {
+  //     item['pieChart'] = []
+  //     var percent = 100 / item['group'].length;
+  //     for (var i = 0; i < item['group'].length; i++) {
+  //         item['pieChart'].push({ "color": item['group'][i], "percent": percent })
+  //     }
+  //
+  // });
+
+  // add dummy nodes and links for the text
   graph.nodes.forEach((item, i) => {
-      item['pieChart'] = []
-      var percent = 100 / item['group'].length;
-      for (var i = 0; i < item['group'].length; i++) {
-          item['pieChart'].push({ "color": item['group'][i], "percent": percent })
+      text_width = getTextWidth(item['id'])
+      radius = item['postCount']/10000
+      if (text_width <= 2*radius) {
+          item['text'] = item['id']
+          item['text_width'] = text_width
+      } else {
+          graph.nodes.push({'id':item['id']+'_label','text':item['id'], 'group':null, 'postCount':item['postCount'],'text_width':text_width})
+          graph.links.push({'source':item['id']+'_label','target':item['id'], "invisible":true})
       }
 
   });
-  console.log(graph.nodes);
 
 
   var link = svg.append("g")
@@ -60,7 +90,14 @@ d3.json("music_health_life.json", function(error, graph) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+    .attr("stroke-width", 2)
+    .style("stroke", function(d){
+        if (d.invisible) {
+            // return 'none'
+            return 'red'
+        }
+    } )
+    .attr('length', 0)
 
   var node = svg.append("g")
     .attr("class", "nodes")
@@ -68,38 +105,77 @@ d3.json("music_health_life.json", function(error, graph) {
     .data(graph.nodes)
     .enter().append("g")
 
-  node.each(function (d) {
-             NodePieBuilder.drawNodePie(d3.select(this), d.pieChart, {
-                 'radius':d.postCount/10000
 
-            });
-        });
+
+  var labels = node.append("text")
+        .text(function(d) {
+          return d.text;
+        })
+        .attr("text-anchor", "middle")
+        .attr("dy", ".35em")
+
+// console.log(node['_groups'])
+// node['_groups'][0].forEach((item, i) => {
+//     console.log(item.select("text"));
+// });
+
+
+
+
+  var circles = node.append("circle")
+      .attr("r", function(d){
+          if (d.group==null) {
+            return d.text_width/2
+        } else {
+            return d.postCount/10000
+        }
+
+      })
+      .attr("fill", function(d) {
+          if (d.group==null) {
+              return "none"
+          }else {
+              return color(d.group);
+          } })
+      .style("stroke", 'red')
+      // .style("stroke", 'none')
+
+
+  var labels = node.append("text")
+        .text(function(d) {
+          return d.text;
+        })
+        .attr("text-anchor", "middle")
+        .attr("dy", ".35em")
+
+  // node.each(function (d) {
+  //            NodePieBuilder.drawNodePie(d3.select(this), d.pieChart, {
+  //                'radius':d.postCount/10000
+  //
+  //           });
+  //       });
 
 // labels
-  var labels = node.append("text")
-      .text(function(d) {
-        return d.id;
-      })
-      .attr("text-anchor", "middle")
-      .attr('y',function(d) {
-        var node_radius = d.postCount/10000
-        if (this.getComputedTextLength()<2*node_radius) {
-              return 0.3*radius
-      } else {
-          console.log(this);
-          return node_radius+10
-      }});
+  // var label_node = svg
+  //   .selectAll("circle")
+  //   .data(graph.nodes)
+  //   .enter()
+  //   .append("circle")
+  //     .attr("r", 20)
+  //     .style("fill", "#69b3a2")
+
+
 
   node.append("title")
       .text(function(d) { return d.id; });
 
-//simulation
+// simulation
   simulation
       .nodes(graph.nodes)
       .on("tick", ticked);
-
   simulation.force("link")
       .links(graph.links);
+
 
   function ticked() {
     link
@@ -111,8 +187,11 @@ d3.json("music_health_life.json", function(error, graph) {
     node
         .attr("transform", function(d) {
           return "translate(" + d.x + "," + d.y + ")";
-        })
+      });
+
+
   }
 });
+
 
 </script>
