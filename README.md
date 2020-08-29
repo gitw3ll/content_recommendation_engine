@@ -19,3 +19,6 @@ output:
 to run scraper:
 - run `python scrapy_wrapper.py -tag TAG -start_date YYYMMDD -end_date YYYMMDD`
 - arguments are optional, default parameters in `scrapy_wrapper.py`
+
+## Visualization
+[View current state](https://raw.githack.com/gitw3ll/content_recommendation_engine/master/visualization/networks.html)
