@@ -19,7 +19,15 @@ text {
 }
 
 </style>
-<svg width="1960" height="1900"></svg>
+<!-- visualization area -->
+<svg width="1260" height="1300"></svg>
+
+<!-- Check box -->
+<div>
+    <input type="checkbox" id="checkbox" checked>
+      <label for="myCheckBox">Developer Mode</label>
+</div>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="node-pie.js"></script>
 <script>
@@ -56,7 +64,30 @@ function getTextWidth(text) {
     var metrics = context.measureText(text);
     return metrics.width;
 }
+var development_color = 'red'
+var link_color = '#999'
+// checkbox
+function update(){
+	if(d3.select("#checkbox").property("checked")){
+        d3.selectAll('circle')
+            .style('stroke', development_color);
+        d3.selectAll('.links').selectAll("line")
+        .style('stroke', function() {
+            return this.style.stroke == 'none' ? development_color:link_color});
+    }
+	else {
+        d3.selectAll('circle')
+        .style('stroke', 'none');
+        d3.selectAll('.links').selectAll("line")
+        .style('stroke', function(){
+            return this.style.stroke == development_color ? 'none':link_color
+        });
+        }
+        }
+update();
+d3.select("#checkbox").on("change",update);
 
+// read in data
 d3.json("music_health_life.json", function(error, graph) {
   if (error) throw error;
 
@@ -93,8 +124,7 @@ d3.json("music_health_life.json", function(error, graph) {
     .attr("stroke-width", 2)
     .style("stroke", function(d){
         if (d.invisible) {
-            // return 'none'
-            return 'red'
+            return development_color
         }
     } )
     .attr('length', 0)
@@ -137,8 +167,7 @@ d3.json("music_health_life.json", function(error, graph) {
           }else {
               return color(d.group);
           } })
-      .style("stroke", 'red')
-      // .style("stroke", 'none')
+      .style("stroke", development_color)
 
 
   var labels = node.append("text")
@@ -188,10 +217,9 @@ d3.json("music_health_life.json", function(error, graph) {
         .attr("transform", function(d) {
           return "translate(" + d.x + "," + d.y + ")";
       });
-
-
   }
 });
+
 
 
 </script>
