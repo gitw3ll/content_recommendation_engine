@@ -30,16 +30,33 @@ svg {
 <div>
     <input type="checkbox" id="checkbox" checked>
       <label for="myCheckBox">Developer Mode</label>
+      <button type="button" id="reset-zoom-button">Reset Zoom</button>
 </div>
+
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="node-pie.js"></script>
 <script>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    radius = 20;
+// Zoom
+var zoom_handler = d3.zoom()
+  .on("zoom", zoom_actions);
+
+var svg = d3.select("svg").call(zoom_handler),
+      width = +svg.attr("width"),
+      height = +svg.attr("height"),
+      radius = 20,
+      //add encompassing group for the zoom
+      g = svg.append("g")
+        .attr("class", "everything")
+//Zoom functions
+function zoom_actions(){
+      g.attr("transform", d3.event.transform)
+      }
+d3.select("#reset-zoom-button").on('click',function() {
+    svg.call(zoom_handler.transform, d3.zoomIdentity)
+  })
+
 
 var color = d3.scaleOrdinal(d3.schemeCategory20)
 
@@ -87,109 +104,98 @@ function update(){
         });
         }
         }
-update();
 d3.select("#checkbox").on("change",update);
 
 // read in data
-d3.json("music_health_life.json", function(error, graph) {
-  if (error) throw error;
+function visualize(){
+    d3.json("music_health_life.json", function(error, graph) {
+      if (error) throw error;
 
-  // add dummy nodes and links for the text
-  graph.nodes.forEach((item, i) => {
-      text_width = getTextWidth(item['id'])
-      radius = item['postCount']/10000
-      if (text_width <= 2*radius) {
-          item['text'] = item['id']
-          item['text_width'] = text_width
-      } else {
-          graph.nodes.push({'id':item['id']+'_label','text':item['id'], 'group':null, 'postCount':item['postCount'],'text_width':text_width})
-          graph.links.push({'source':item['id']+'_label','target':item['id'], "invisible":true})
+      // add dummy nodes and links for the text
+      graph.nodes.forEach((item, i) => {
+          text_width = getTextWidth(item['id'])
+          radius = item['postCount']/10000
+          if (text_width <= 2*radius) {
+              item['text'] = item['id']
+              item['text_width'] = text_width
+          } else {
+              graph.nodes.push({'id':item['id']+'_label','text':item['id'], 'group':null, 'postCount':item['postCount'],'text_width':text_width})
+              graph.links.push({'source':item['id']+'_label','target':item['id'], "invisible":true})
+          }
+
+      });
+
+      var link = g.append("g")
+        .attr("class", "links")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("stroke-width", 2)
+        .style("stroke", function(d){
+            if (d.invisible) {
+                return development_color
+            }
+        } )
+        .attr('length', 0)
+
+      var node = g.append("g")
+        .attr("class", "nodes")
+        .selectAll("circle")
+        .data(graph.nodes)
+        .enter().append("g")
+
+      var circles = node.append("circle")
+          .attr("r", function(d){
+              if (d.group==null) {
+                return d.text_width/2
+            } else {
+                return d.postCount/10000
+            }
+
+          })
+          .attr("fill", function(d) {
+              if (d.group==null) {
+                  return "none"
+              }else {
+                  return color(d.group);
+              } })
+          .style("stroke", development_color)
+
+
+      var labels = node.append("text")
+            .text(function(d) {
+              return d.text;
+            })
+            .attr("text-anchor", "middle")
+            .attr("dy", ".35em")
+
+      node.append("title")
+          .text(function(d) { return d.id; });
+
+    // simulation
+      simulation
+          .nodes(graph.nodes)
+          .on("tick", ticked)
+      simulation.force("link")
+          .links(graph.links);
+
+
+      function ticked() {
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node
+            .attr("transform", function(d) {
+              return "translate(" + d.x + "," + d.y + ")";
+          });
       }
 
-  });
-
-  //add encompassing group for the zoom
-  var g = svg.append("g")
-    .attr("class", "everything");
-
-  var link = g.append("g")
-    .attr("class", "links")
-    .selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-    .attr("stroke-width", 2)
-    .style("stroke", function(d){
-        if (d.invisible) {
-            return development_color
-        }
-    } )
-    .attr('length', 0)
-
-  var node = g.append("g")
-    .attr("class", "nodes")
-    .selectAll("circle")
-    .data(graph.nodes)
-    .enter().append("g")
-
-  var circles = node.append("circle")
-      .attr("r", function(d){
-          if (d.group==null) {
-            return d.text_width/2
-        } else {
-            return d.postCount/10000
-        }
-
-      })
-      .attr("fill", function(d) {
-          if (d.group==null) {
-              return "none"
-          }else {
-              return color(d.group);
-          } })
-      .style("stroke", development_color)
-
-
-  var labels = node.append("text")
-        .text(function(d) {
-          return d.text;
-        })
-        .attr("text-anchor", "middle")
-        .attr("dy", ".35em")
-
-  node.append("title")
-      .text(function(d) { return d.id; });
-
-// simulation
-  simulation
-      .nodes(graph.nodes)
-      .on("tick", ticked);
-  simulation.force("link")
-      .links(graph.links);
-
-
-  function ticked() {
-    link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-
-    node
-        .attr("transform", function(d) {
-          return "translate(" + d.x + "," + d.y + ")";
-      });
-  }
-
-  var zoom_handler = d3.zoom()
-    .on("zoom", zoom_actions);
-
-    zoom_handler(svg)
-      //Zoom functions
-    function zoom_actions(){
-        g.attr("transform", d3.event.transform)
+    });
 }
-});
-
+visualize()
 
 
 </script>
