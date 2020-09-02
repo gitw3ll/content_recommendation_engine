@@ -17,10 +17,14 @@ text {
   font-family: sans-serif;
   font-size: 15px;
 }
+svg {
+ border:10px solid green;
+}
 
 </style>
+<h1>Medium Network</h1>
 <!-- visualization area -->
-<svg width="1260" height="1300"></svg>
+<svg id="visualization" height="800" width="1200" margin="auto"></svg>
 
 <!-- Check box -->
 <div>
@@ -38,7 +42,6 @@ var svg = d3.select("svg"),
     radius = 20;
 
 var color = d3.scaleOrdinal(d3.schemeCategory20)
-
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(function(d){
@@ -91,16 +94,6 @@ d3.select("#checkbox").on("change",update);
 d3.json("music_health_life.json", function(error, graph) {
   if (error) throw error;
 
-  //add pie chart info
-  // graph.nodes.forEach((item, i) => {
-  //     item['pieChart'] = []
-  //     var percent = 100 / item['group'].length;
-  //     for (var i = 0; i < item['group'].length; i++) {
-  //         item['pieChart'].push({ "color": item['group'][i], "percent": percent })
-  //     }
-  //
-  // });
-
   // add dummy nodes and links for the text
   graph.nodes.forEach((item, i) => {
       text_width = getTextWidth(item['id'])
@@ -115,8 +108,11 @@ d3.json("music_health_life.json", function(error, graph) {
 
   });
 
+  //add encompassing group for the zoom
+  var g = svg.append("g")
+    .attr("class", "everything");
 
-  var link = svg.append("g")
+  var link = g.append("g")
     .attr("class", "links")
     .selectAll("line")
     .data(graph.links)
@@ -129,28 +125,11 @@ d3.json("music_health_life.json", function(error, graph) {
     } )
     .attr('length', 0)
 
-  var node = svg.append("g")
+  var node = g.append("g")
     .attr("class", "nodes")
-    .selectAll("g")
+    .selectAll("circle")
     .data(graph.nodes)
     .enter().append("g")
-
-
-
-  var labels = node.append("text")
-        .text(function(d) {
-          return d.text;
-        })
-        .attr("text-anchor", "middle")
-        .attr("dy", ".35em")
-
-// console.log(node['_groups'])
-// node['_groups'][0].forEach((item, i) => {
-//     console.log(item.select("text"));
-// });
-
-
-
 
   var circles = node.append("circle")
       .attr("r", function(d){
@@ -177,24 +156,6 @@ d3.json("music_health_life.json", function(error, graph) {
         .attr("text-anchor", "middle")
         .attr("dy", ".35em")
 
-  // node.each(function (d) {
-  //            NodePieBuilder.drawNodePie(d3.select(this), d.pieChart, {
-  //                'radius':d.postCount/10000
-  //
-  //           });
-  //       });
-
-// labels
-  // var label_node = svg
-  //   .selectAll("circle")
-  //   .data(graph.nodes)
-  //   .enter()
-  //   .append("circle")
-  //     .attr("r", 20)
-  //     .style("fill", "#69b3a2")
-
-
-
   node.append("title")
       .text(function(d) { return d.id; });
 
@@ -218,6 +179,15 @@ d3.json("music_health_life.json", function(error, graph) {
           return "translate(" + d.x + "," + d.y + ")";
       });
   }
+
+  var zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+    zoom_handler(svg)
+      //Zoom functions
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+}
 });
 
 
