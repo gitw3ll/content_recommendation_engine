@@ -105,7 +105,7 @@ class MediumPost(scrapy.Spider):
                             "url": urls[i]}
 
                 if int(clap_count[i])>=int(self.clap_limit):
-                    if self.include_body:
+                    if eval(self.include_body):
                         yield scrapy.Request(urls[i],callback=self.parse, cb_kwargs={'parsed_data':parsed_data})
                     else:
                         yield parsed_data
