@@ -28,8 +28,8 @@ svg {
 
 <!-- Check box -->
 <div>
-    <input type="checkbox" id="checkbox" checked>
-      <label for="myCheckBox">Developer Mode</label>
+    <!-- <input type="checkbox" id="checkbox" checked>
+      <label for="myCheckBox">Developer Mode</label> -->
       <button type="button" id="reset-zoom-button">Reset Zoom</button>
 </div>
 
@@ -59,6 +59,7 @@ d3.select("#reset-zoom-button").on('click',function() {
 
 
 var color = d3.scaleOrdinal(d3.schemeCategory20)
+var data_file = "top_1e5.json" //"health_3degree.json" //"music_health_life.json"
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(function(d){
@@ -108,9 +109,22 @@ d3.select("#checkbox").on("change",update);
 
 // read in data
 function visualize(){
-    d3.json("music_health_life.json", function(error, graph) {
+    d3.json(data_file, function(error, graph) {
       if (error) throw error;
 
+      // // add dummy nodes and links for the text
+      // graph.nodes.forEach((item, i) => {
+      //     text_width = getTextWidth(item['id'])
+      //     radius = item['postCount']/10000
+      //     if (text_width <= 2*radius) {
+      //         item['text'] = item['id']
+      //         item['text_width'] = text_width
+      //     } else {
+      //         graph.nodes.push({'id':item['id']+'_label','text':item['id'], 'group':null, 'postCount':item['postCount'],'text_width':text_width})
+      //         graph.links.push({'source':item['id']+'_label','target':item['id'], "invisible":true})
+      //     }
+      //
+      // });
       // add dummy nodes and links for the text
       graph.nodes.forEach((item, i) => {
           text_width = getTextWidth(item['id'])
@@ -118,9 +132,6 @@ function visualize(){
           if (text_width <= 2*radius) {
               item['text'] = item['id']
               item['text_width'] = text_width
-          } else {
-              graph.nodes.push({'id':item['id']+'_label','text':item['id'], 'group':null, 'postCount':item['postCount'],'text_width':text_width})
-              graph.links.push({'source':item['id']+'_label','target':item['id'], "invisible":true})
           }
 
       });
@@ -159,7 +170,7 @@ function visualize(){
               }else {
                   return color(d.group);
               } })
-          .style("stroke", development_color)
+          // .style("stroke", development_color)
 
 
       var labels = node.append("text")
