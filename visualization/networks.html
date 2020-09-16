@@ -174,7 +174,13 @@ function visualize(){
               }else {
                   return color(d.group);
               } })
-          // .style("stroke", development_color)
+            .on('mouseenter', function(d){
+                d3.select(this)
+                .style("stroke", 'red')
+                .style("stroke-width", 5)
+            })
+            .on('mouseleave', function(d){
+                    d3.select(this).style("stroke", 'none')})
 
 
       var labels = node.append("text")
