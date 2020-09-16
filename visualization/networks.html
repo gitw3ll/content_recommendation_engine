@@ -154,6 +154,10 @@ function visualize(){
         .selectAll("circle")
         .data(graph.nodes)
         .enter().append("g")
+        .attr("transform", function(d){
+            return `translate(${d.x*10},${d.y*10})`
+        })
+
 
       var circles = node.append("circle")
           .attr("r", function(d){
