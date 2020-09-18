@@ -23,19 +23,21 @@ svg {
 
 </style>
 <h1>Medium Network</h1>
-<!-- visualization area -->
-<svg id="visualization" margin="auto"></svg>
+<body>
+    <!-- visualization area -->
+    <svg id="visualization" margin="auto"></svg>
+    <!-- text area -->
+    <svg id="text" margin="auto" ></svg>
+    <!-- Check box -->
+    <div>
+        <!-- <input type="checkbox" id="checkbox" checked>
+          <label for="myCheckBox">Developer Mode</label> -->
+          <button type="button" id="reset-zoom-button">Reset Zoom</button>
+    </div>
 
-<!-- Check box -->
-<div>
-    <!-- <input type="checkbox" id="checkbox" checked>
-      <label for="myCheckBox">Developer Mode</label> -->
-      <button type="button" id="reset-zoom-button">Reset Zoom</button>
-</div>
-
-
+</body>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="node-pie.js"></script>
+<!-- <script src="node-pie.js"></script> -->
 <script>
 
 // Zoom
@@ -44,10 +46,14 @@ var zoom_handler = d3.zoom()
 
 var width = screen.width*0.8,
     height = screen.height*0.75,
-    svg = d3.select("svg")
+    svg = d3.select("#visualization")
             .call(zoom_handler)
             .attr('width', width)
             .attr('height', height),
+    text_svg = d3.select("#text")
+            .attr('width', screen.width - width-60)
+            .attr('height', height)
+            .append("g"),
     radius = 20,
       //add encompassing group for the zoom
     g = svg.append("g")
@@ -181,11 +187,77 @@ function visualize(){
               } })
             .on('mouseenter', function(d){
                 d3.select(this)
-                .style("stroke", 'red')
-                .style("stroke-width", 5)
+                    .style("stroke", 'red')
+                    .style("stroke-width", 5);
+                text_svg.append('text')
+                    .text(d.id.toUpperCase())
+                    .style("font-size", "20")
+                    .style("font-family", "sans-serif bold")
+                    .attr("font-weight", 800)
+                    .style("color", "black")
+                    .attr("y", d3.select("#text").attr('height')/8)
+                    .attr("text-anchor", "middle")
+                    .attr("x", d3.select("#text").attr('width')/2);
+                text_svg.append('text')
+                    .text('Related Tags:')
+                    .style("font-size", "20")
+                    .style("font-family", "sans-serif")
+                    .attr("text-decoration", "underline")
+                    .attr("fill", "black")
+                    .attr("y", d3.select("#text").attr('height')/2 - d3.select("#text").attr('height')/(20))
+                    .attr("text-anchor", "middle")
+                    .attr("x", d3.select("#text").attr('width')/2);
+                d.related_tags.forEach((tag, i) => {
+                    text_svg.append('text')
+                        .text(tag)
+                        .style("font-size", "20")
+                        .attr("font-family", "sans-serif")
+                        .attr("fill", "black")
+                        .attr("y", d3.select("#text").attr('height')/2 + d3.select("#text").attr('height')/(20)*i)
+                        .attr("text-anchor", "middle")
+                        .attr("x", d3.select("#text").attr('width')/2)
+                });
+                var nodeNeighbors = graph.links.filter(function(link) {
+                        // Filter the list of links to only those links that have our target
+                        // node as a source or target
+                        return link.source.index === d.index || link.target.index === d.index;})
+                    .map(function(link) {
+                        // Map the list of links to a simple array of the neighboring indices - this is
+                        // technically not required but makes the code below simpler because we can use
+                        // indexOf instead of iterating and searching ourselves.
+                        return link.source.index === d.index ? link.target.index : link.source.index; });
+                var linkNeighbors = graph.links.filter(function(link) {
+                        // Filter the list of links to only those links that have our target
+                        // node as a source or target
+                        return link.source.index === d.index || link.target.index === d.index;})
+                    .map(function(link) {
+                        // Map the list of links to a simple array of the neighboring indices - this is
+                        // technically not required but makes the code below simpler because we can use
+                        // indexOf instead of iterating and searching ourselves.
+                        return link.index});
+
+                svg.selectAll('circle').filter(function(node) {
+                        // I filter the selection of all circles to only those that hold a node with an
+                        // index in my listg of neighbors
+                        return nodeNeighbors.indexOf(node.index) > -1;
+                    })
+                    .style('stroke', 'red')
+                    .attr("stroke-width", 2);
+                svg.selectAll('line').filter(function(link) {
+                    return linkNeighbors.indexOf(link.index) > -1;
+                    })
+                    .style('stroke', 'black')
+                    .style("stroke-width", 3);
+
+
+
             })
             .on('mouseleave', function(d){
-                    d3.select(this).style("stroke", 'none')})
+                    d3.selectAll('circle').style("stroke", 'none');
+                    text_svg.selectAll("text").remove()
+                    svg.selectAll('line')
+                        .style('stroke', '#999')
+                    })
 
 
       var labels = node.append("text")
@@ -221,7 +293,7 @@ function visualize(){
 
     });
 }
-visualize()
+visualize();
 
 
 </script>
