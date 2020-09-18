@@ -22,3 +22,15 @@ to run scraper:
 
 ## Visualization
 [View current state](https://raw.githack.com/gitw3ll/content_recommendation_engine/master/visualization/networks.html)
+
+## Text Analysis
+files:
+- `medium_article_scoring.ipynb` : returns top x articles from tag
+- `medium_tag_scoring.ipynb` : color scores overall tag
+- `text_scorer.py ` : color scoring for text file
+- ` top_health_articles.json ` : health scrape
+- `top_wellness_articles.json ` : wellness scrape
+
+to run text_scorer:
+- run `python text_scorer.py filepath`
+- argument is required
