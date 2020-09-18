@@ -1,3 +1,7 @@
+'''
+Takes command line input of file path of text file
+Returns color counts
+'''
 import sys
 import string
 import pandas as pd
