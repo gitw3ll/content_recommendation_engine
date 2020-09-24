@@ -159,6 +159,53 @@ function visualize(){
             }
         } )
         .attr('length', 0)
+        .on('mouseenter', function(d){
+            d3.select(this)
+                .style("stroke", 'black')
+                .style("stroke-width", 4);
+            text_svg.append('text')
+                .text(d.source.id.toUpperCase())
+                .style("font-size", "20")
+                .style("font-family", "sans-serif bold")
+                .attr("font-weight", 800)
+                .style("color", "black")
+                .attr("y", d3.select("#text").attr('height')/8)
+                .attr("text-anchor", "middle")
+                .attr("x", d3.select("#text").attr('width')/2);
+            text_svg.append('text')
+                .text(d.target.id.toUpperCase())
+                .style("font-size", "20")
+                .style("font-family", "sans-serif bold")
+                .attr("font-weight", 800)
+                .style("color", "black")
+                .attr("y", d3.select("#text").attr('height')/2 - d3.select("#text").attr('height')/(20))
+                .attr("text-anchor", "middle")
+                .attr("x", d3.select("#text").attr('width')/2);
+
+
+            svg.selectAll('circle').filter(function(node) {
+                    // I filter the selection of all circles to only those that hold a node with an
+                    // index in my listg of neighbors
+                    return [d.source.index, d.target.index].indexOf(node.index) > -1;
+                })
+                .style('stroke', 'red')
+                .attr("stroke-width", 2);
+
+
+
+
+        })
+        .on('mouseleave', function(d){
+                d3.selectAll('circle')
+                    .style("stroke", 'none')
+                    .style("stroke-width", 2);
+                text_svg.selectAll("text").remove()
+                svg.selectAll('line')
+                    .style('stroke', '#999')
+                    .style("stroke-width", 2)
+                })
+
+
 
       var node = g.append("g")
         .attr("class", "nodes")
@@ -253,10 +300,13 @@ function visualize(){
 
             })
             .on('mouseleave', function(d){
-                    d3.selectAll('circle').style("stroke", 'none');
+                    d3.selectAll('circle')
+                        .style("stroke", 'none')
+                        .style("stroke-width", 2);
                     text_svg.selectAll("text").remove()
                     svg.selectAll('line')
                         .style('stroke', '#999')
+                        .style("stroke-width", 2)
                     })
 
 
