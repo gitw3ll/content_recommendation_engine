@@ -1,0 +1,2847 @@
+{
+    "nodes": [
+        {
+            "id": "food",
+            "postCount": 155101,
+            "group": 4,
+            "x": -20.398788452148438,
+            "y": -65.9408950805664,
+            "related_tags": [
+                "health",
+                "recipe",
+                "cooking",
+                "travel",
+                "nutrition",
+                "restaurant",
+                "foodies",
+                "diet",
+                "humor"
+            ]
+        },
+        {
+            "id": "life-lessons",
+            "postCount": 397205,
+            "group": 1,
+            "x": 5.11460018157959,
+            "y": -65.21012115478516,
+            "related_tags": [
+                "life",
+                "self-improvement",
+                "inspiration",
+                "relationships",
+                "entrepreneurship",
+                "writing",
+                "personal-development",
+                "love",
+                "self"
+            ]
+        },
+        {
+            "id": "humor",
+            "postCount": 124352,
+            "group": 1,
+            "x": 1.0055456161499023,
+            "y": -91.71932220458984,
+            "related_tags": [
+                "satire",
+                "life",
+                "comedy",
+                "politics",
+                "writing",
+                "life-lessons",
+                "funny",
+                "short-story",
+                "fiction"
+            ]
+        },
+        {
+            "id": "self",
+            "postCount": 71141,
+            "group": 1,
+            "x": 0.2768320143222809,
+            "y": -72.11724090576172,
+            "related_tags": [
+                "self-improvement",
+                "life-lessons",
+                "life",
+                "relationships",
+                "mental-health",
+                "love",
+                "poetry",
+                "writing",
+                "personal-development"
+            ]
+        },
+        {
+            "id": "fiction",
+            "postCount": 128364,
+            "group": 1,
+            "x": 6.453962802886963,
+            "y": -90.49617004394531,
+            "related_tags": [
+                "short-story",
+                "writing",
+                "love",
+                "poetry",
+                "flash-fiction",
+                "humor",
+                "creative-writing",
+                "life",
+                "fantasy"
+            ]
+        },
+        {
+            "id": "poetry",
+            "postCount": 387491,
+            "group": 1,
+            "x": 14.893607139587402,
+            "y": -81.65579986572266,
+            "related_tags": [
+                "love",
+                "life",
+                "poem",
+                "poetry-on-medium",
+                "writing",
+                "haiku",
+                "relationships",
+                "life-lessons",
+                "nature"
+            ]
+        },
+        {
+            "id": "movies",
+            "postCount": 221281,
+            "group": 3,
+            "x": -13.008390426635742,
+            "y": 91.01010131835938,
+            "related_tags": [
+                "film",
+                "movie-review",
+                "screenwriting",
+                "review",
+                "cinema",
+                "writing",
+                "google",
+                "television",
+                "culture"
+            ]
+        },
+        {
+            "id": "technology",
+            "postCount": 298958,
+            "group": 6,
+            "x": 2.895866632461548,
+            "y": 5.883522987365723,
+            "related_tags": [
+                "startup",
+                "blockchain",
+                "tech",
+                "artificial-intelligence",
+                "programming",
+                "business",
+                "cryptocurrency",
+                "innovation",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "culture",
+            "postCount": 115669,
+            "group": 5,
+            "x": -23.896276473999023,
+            "y": -31.970659255981445,
+            "related_tags": [
+                "politics",
+                "life",
+                "music",
+                "history",
+                "art",
+                "travel",
+                "leadership",
+                "life-lessons",
+                "society"
+            ]
+        },
+        {
+            "id": "innovation",
+            "postCount": 92066,
+            "group": 6,
+            "x": 5.098572731018066,
+            "y": 0.11385226994752884,
+            "related_tags": [
+                "startup",
+                "technology",
+                "entrepreneurship",
+                "business",
+                "leadership",
+                "design",
+                "creativity",
+                "tech",
+                "design-thinking"
+            ]
+        },
+        {
+            "id": "psychology",
+            "postCount": 95706,
+            "group": 1,
+            "x": -3.3257384300231934,
+            "y": -70.58854675292969,
+            "related_tags": [
+                "self-improvement",
+                "mental-health",
+                "life-lessons",
+                "life",
+                "relationships",
+                "philosophy",
+                "self",
+                "personal-development",
+                "love"
+            ]
+        },
+        {
+            "id": "bitcoin",
+            "postCount": 235042,
+            "group": 0,
+            "x": -63.049495697021484,
+            "y": 33.04179382324219,
+            "related_tags": [
+                "cryptocurrency",
+                "blockchain",
+                "ethereum",
+                "crypto",
+                "ico",
+                "investing",
+                "finance",
+                "trading",
+                "fintech"
+            ]
+        },
+        {
+            "id": "fintech",
+            "postCount": 61753,
+            "group": 0,
+            "x": -56.01233673095703,
+            "y": 29.595008850097656,
+            "related_tags": [
+                "blockchain",
+                "cryptocurrency",
+                "bitcoin",
+                "startup",
+                "banking",
+                "finance",
+                "payments",
+                "technology",
+                "ethereum"
+            ]
+        },
+        {
+            "id": "productivity",
+            "postCount": 158816,
+            "group": 7,
+            "x": 11.599538803100586,
+            "y": -42.441551208496094,
+            "related_tags": [
+                "self-improvement",
+                "life-lessons",
+                "writing",
+                "entrepreneurship",
+                "life",
+                "creativity",
+                "time-management",
+                "startup",
+                "personal-development"
+            ]
+        },
+        {
+            "id": "ecommerce",
+            "postCount": 89878,
+            "group": 6,
+            "x": 16.108612060546875,
+            "y": -2.928041458129883,
+            "related_tags": [
+                "marketing",
+                "retail",
+                "startup",
+                "business",
+                "online-shopping",
+                "shopify",
+                "amazon",
+                "entrepreneurship",
+                "magento"
+            ]
+        },
+        {
+            "id": "education",
+            "postCount": 308050,
+            "group": 1,
+            "x": 23.699230194091797,
+            "y": -43.102821350097656,
+            "related_tags": [
+                "teaching",
+                "learning",
+                "college",
+                "schools",
+                "education-reform",
+                "technology",
+                "life-lessons",
+                "edtech",
+                "life"
+            ]
+        },
+        {
+            "id": "covid19",
+            "postCount": 137654,
+            "group": 4,
+            "x": -23.851428985595703,
+            "y": -1.486611008644104,
+            "related_tags": [
+                "coronavirus",
+                "pandemic",
+                "health",
+                "lockdown",
+                "covid-19-crisis",
+                "stay-at-home",
+                "politics",
+                "mental-health",
+                "corona"
+            ]
+        },
+        {
+            "id": "india",
+            "postCount": 92616,
+            "group": 5,
+            "x": -28.229873657226562,
+            "y": -27.513811111450195,
+            "related_tags": [
+                "travel",
+                "politics",
+                "startup",
+                "education",
+                "news",
+                "pakistan",
+                "bollywood",
+                "music",
+                "narendra-modi"
+            ]
+        },
+        {
+            "id": "live-streaming",
+            "postCount": 67610,
+            "group": 2,
+            "x": -13.830135345458984,
+            "y": 66.90711975097656,
+            "related_tags": [
+                "sports",
+                "live",
+                "matche",
+                "social-media",
+                "games",
+                "soccer",
+                "music",
+                "concerts",
+                "tv-series"
+            ]
+        },
+        {
+            "id": "donald-trump",
+            "postCount": 74269,
+            "group": 9,
+            "x": -52.90544891357422,
+            "y": -17.799579620361328,
+            "related_tags": [
+                "politics",
+                "2016-election",
+                "hillary-clinton",
+                "humor",
+                "satire",
+                "news",
+                "government",
+                "racism",
+                "immigration"
+            ]
+        },
+        {
+            "id": "instagram",
+            "postCount": 66667,
+            "group": 2,
+            "x": -3.2737231254577637,
+            "y": 30.069387435913086,
+            "related_tags": [
+                "ifttt",
+                "social-media",
+                "facebook",
+                "google",
+                "instagram-marketing",
+                "social-media-marketing",
+                "marketing",
+                "movies",
+                "photography"
+            ]
+        },
+        {
+            "id": "healthcare",
+            "postCount": 93110,
+            "group": 4,
+            "x": -16.014808654785156,
+            "y": 4.630488395690918,
+            "related_tags": [
+                "health",
+                "politics",
+                "medicine",
+                "health-technology",
+                "technology",
+                "blockchain",
+                "medical",
+                "startup",
+                "covid19"
+            ]
+        },
+        {
+            "id": "advertising",
+            "postCount": 58431,
+            "group": 2,
+            "x": 14.642133712768555,
+            "y": 36.136993408203125,
+            "related_tags": [
+                "medium",
+                "marketing",
+                "business",
+                "journalism",
+                "branding",
+                "digital-marketing",
+                "social-media",
+                "podcast",
+                "technology"
+            ]
+        },
+        {
+            "id": "journalism",
+            "postCount": 54572,
+            "group": 2,
+            "x": -19.869226455688477,
+            "y": 27.97234535217285,
+            "related_tags": [
+                "medium",
+                "politics",
+                "social-media",
+                "news",
+                "writing",
+                "fake-news",
+                "facebook",
+                "donald-trump"
+            ]
+        },
+        {
+            "id": "personal-growth",
+            "postCount": 57533,
+            "group": 7,
+            "x": 17.184598922729492,
+            "y": -52.912811279296875,
+            "related_tags": [
+                "personal-development",
+                "life-lessons",
+                "self-improvement",
+                "life",
+                "self",
+                "self-awareness",
+                "inspiration",
+                "productivity",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "self-awareness",
+            "postCount": 66932,
+            "group": 1,
+            "x": 26.35617446899414,
+            "y": -63.33537292480469,
+            "related_tags": [
+                "self-improvement",
+                "life-lessons",
+                "life",
+                "spirituality",
+                "self-love",
+                "personal-development",
+                "self",
+                "consciousness",
+                "spiritual-growth"
+            ]
+        },
+        {
+            "id": "venture-capital",
+            "postCount": 50177,
+            "group": 6,
+            "x": 7.759644031524658,
+            "y": 6.442593097686768,
+            "related_tags": [
+                "startup",
+                "entrepreneurship",
+                "technology",
+                "investing",
+                "tech",
+                "business",
+                "fundraising",
+                "blockchain",
+                "investment"
+            ]
+        },
+        {
+            "id": "christianity",
+            "postCount": 103389,
+            "group": 1,
+            "x": 29.71978187561035,
+            "y": -69.23128509521484,
+            "related_tags": [
+                "bible",
+                "religion",
+                "jesus",
+                "faith",
+                "god",
+                "spirituality",
+                "life",
+                "life-lessons",
+                "love"
+            ]
+        },
+        {
+            "id": "ai",
+            "postCount": 52435,
+            "group": 10,
+            "x": 41.8197021484375,
+            "y": 12.211015701293945,
+            "related_tags": [
+                "artificial-intelligence",
+                "machine-learning",
+                "technology",
+                "blockchain",
+                "data-science",
+                "chatbots",
+                "deep-learning",
+                "bots",
+                "startup"
+            ]
+        },
+        {
+            "id": "python",
+            "postCount": 57236,
+            "group": 10,
+            "x": 50.65113830566406,
+            "y": 17.198184967041016,
+            "related_tags": [
+                "data-science",
+                "programming",
+                "machine-learning",
+                "django",
+                "python3",
+                "python-programming",
+                "artificial-intelligence",
+                "coding",
+                "deep-learning"
+            ]
+        },
+        {
+            "id": "data-science",
+            "postCount": 92792,
+            "group": 10,
+            "x": 51.33373260498047,
+            "y": 13.877175331115723,
+            "related_tags": [
+                "machine-learning",
+                "artificial-intelligence",
+                "python",
+                "data-visualization",
+                "big-data",
+                "data",
+                "programming",
+                "deep-learning",
+                "analytics"
+            ]
+        },
+        {
+            "id": "machine-learning",
+            "postCount": 122065,
+            "group": 10,
+            "x": 47.456199645996094,
+            "y": 14.797384262084961,
+            "related_tags": [
+                "artificial-intelligence",
+                "data-science",
+                "deep-learning",
+                "ai",
+                "python",
+                "technology",
+                "neural-networks",
+                "programming",
+                "nlp"
+            ]
+        },
+        {
+            "id": "spirituality",
+            "postCount": 73651,
+            "group": 1,
+            "x": 27.84679412841797,
+            "y": -65.74200439453125,
+            "related_tags": [
+                "self-improvement",
+                "life",
+                "spiritual-growth",
+                "life-lessons",
+                "self-awareness",
+                "consciousness",
+                "christianity",
+                "poetry",
+                "religion"
+            ]
+        },
+        {
+            "id": "facebook",
+            "postCount": 68209,
+            "group": 2,
+            "x": -3.6947810649871826,
+            "y": 27.245132446289062,
+            "related_tags": [
+                "social-media",
+                "google",
+                "instagram",
+                "twitter",
+                "marketing",
+                "youtube",
+                "movies",
+                "android",
+                "music"
+            ]
+        },
+        {
+            "id": "depression",
+            "postCount": 52556,
+            "group": 1,
+            "x": -5.562611103057861,
+            "y": -77.0118179321289,
+            "related_tags": [
+                "mental-health",
+                "anxiety",
+                "life",
+                "poetry",
+                "life-lessons",
+                "suicide",
+                "mental-illness",
+                "love",
+                "self-improvement"
+            ]
+        },
+        {
+            "id": "economics",
+            "postCount": 59822,
+            "group": 0,
+            "x": -69.92987823486328,
+            "y": 16.85392951965332,
+            "related_tags": [
+                "politics",
+                "finance",
+                "business",
+                "investing",
+                "money",
+                "bitcoin",
+                "government",
+                "economy",
+                "cryptocurrency"
+            ]
+        },
+        {
+            "id": "money",
+            "postCount": 67816,
+            "group": 0,
+            "x": -73.78876495361328,
+            "y": 17.67702865600586,
+            "related_tags": [
+                "finance",
+                "investing",
+                "personal-finance",
+                "business",
+                "bitcoin",
+                "cryptocurrency",
+                "entrepreneurship",
+                "life-lessons",
+                "life"
+            ]
+        },
+        {
+            "id": "medium",
+            "postCount": 69508,
+            "group": 2,
+            "x": -22.34099006652832,
+            "y": 27.24382209777832,
+            "related_tags": [
+                "writing",
+                "journalism",
+                "politics",
+                "social-media",
+                "movies",
+                "news",
+                "blogging",
+                "marketing",
+                "life"
+            ]
+        },
+        {
+            "id": "2016-election",
+            "postCount": 53358,
+            "group": 9,
+            "x": -55.656349182128906,
+            "y": -17.602476119995117,
+            "related_tags": [
+                "politics",
+                "donald-trump",
+                "hillary-clinton",
+                "bernie-sanders",
+                "trump",
+                "republican-party",
+                "racism",
+                "humor",
+                "government"
+            ]
+        },
+        {
+            "id": "tv-shows",
+            "postCount": 93832,
+            "group": 3,
+            "x": -9.988722801208496,
+            "y": 101.30673217773438,
+            "related_tags": [
+                "tv-series",
+                "television",
+                "drama",
+                "reality",
+                "film",
+                "movies",
+                "comedy",
+                "full-episode",
+                "tv-reviews"
+            ]
+        },
+        {
+            "id": "sports",
+            "postCount": 203353,
+            "group": 2,
+            "x": -14.71703815460205,
+            "y": 64.5853042602539,
+            "related_tags": [
+                "nba",
+                "nfl",
+                "baseball",
+                "football",
+                "basketball",
+                "mlb",
+                "soccer",
+                "live-streaming",
+                "college-football"
+            ]
+        },
+        {
+            "id": "news",
+            "postCount": 133984,
+            "group": 2,
+            "x": -25.936431884765625,
+            "y": 25.7076416015625,
+            "related_tags": [
+                "politics",
+                "blockchain",
+                "technology",
+                "cryptocurrency",
+                "journalism",
+                "life",
+                "medium",
+                "tech",
+                "bitcoin"
+            ]
+        },
+        {
+            "id": "coronavirus",
+            "postCount": 89729,
+            "group": 4,
+            "x": -23.46124267578125,
+            "y": -3.897402048110962,
+            "related_tags": [
+                "covid19",
+                "health",
+                "science",
+                "pandemic",
+                "politics",
+                "mental-health",
+                "education",
+                "parenting",
+                "self"
+            ]
+        },
+        {
+            "id": "learning",
+            "postCount": 60196,
+            "group": 1,
+            "x": 20.404680252075195,
+            "y": -45.22419357299805,
+            "related_tags": [
+                "education",
+                "self-improvement",
+                "life-lessons",
+                "life",
+                "teaching",
+                "programming",
+                "productivity",
+                "personal-development",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "marketing",
+            "postCount": 263255,
+            "group": 2,
+            "x": 11.951408386230469,
+            "y": 37.58206558227539,
+            "related_tags": [
+                "business",
+                "startup",
+                "social-media",
+                "entrepreneurship",
+                "digital-marketing",
+                "advertising",
+                "content-marketing",
+                "branding",
+                "writing"
+            ]
+        },
+        {
+            "id": "apple",
+            "postCount": 55219,
+            "group": 2,
+            "x": 0.7718639373779297,
+            "y": 17.053421020507812,
+            "related_tags": [
+                "iphone",
+                "tech",
+                "ios",
+                "technology",
+                "ipad",
+                "apple-watch",
+                "google",
+                "apps",
+                "android"
+            ]
+        },
+        {
+            "id": "finance",
+            "postCount": 129073,
+            "group": 0,
+            "x": -69.7362060546875,
+            "y": 20.15817642211914,
+            "related_tags": [
+                "investing",
+                "money",
+                "cryptocurrency",
+                "blockchain",
+                "bitcoin",
+                "business",
+                "fintech",
+                "economics",
+                "stock-market"
+            ]
+        },
+        {
+            "id": "investing",
+            "postCount": 82756,
+            "group": 0,
+            "x": -68.40624237060547,
+            "y": 23.2680606842041,
+            "related_tags": [
+                "finance",
+                "cryptocurrency",
+                "stock-market",
+                "bitcoin",
+                "blockchain",
+                "money",
+                "trading",
+                "startup",
+                "real-estate"
+            ]
+        },
+        {
+            "id": "ico",
+            "postCount": 76147,
+            "group": 0,
+            "x": -60.39084243774414,
+            "y": 40.41358947753906,
+            "related_tags": [
+                "blockchain",
+                "cryptocurrency",
+                "bitcoin",
+                "ethereum",
+                "token-sale",
+                "crypto",
+                "token",
+                "investing",
+                "airdrop"
+            ]
+        },
+        {
+            "id": "crypto",
+            "postCount": 77891,
+            "group": 0,
+            "x": -65.2782211303711,
+            "y": 36.99401092529297,
+            "related_tags": [
+                "cryptocurrency",
+                "blockchain",
+                "bitcoin",
+                "ethereum",
+                "ico",
+                "cryptocurrency-investment",
+                "cryptocurrency-news",
+                "trading",
+                "blockchain-technology"
+            ]
+        },
+        {
+            "id": "ethereum",
+            "postCount": 110315,
+            "group": 0,
+            "x": -56.546730041503906,
+            "y": 38.7508430480957,
+            "related_tags": [
+                "blockchain",
+                "bitcoin",
+                "cryptocurrency",
+                "ico",
+                "crypto",
+                "smart-contracts",
+                "token-sale",
+                "technology",
+                "dapps"
+            ]
+        },
+        {
+            "id": "javascript",
+            "postCount": 137841,
+            "group": 8,
+            "x": 56.311378479003906,
+            "y": 47.106693267822266,
+            "related_tags": [
+                "web-development",
+                "programming",
+                "react",
+                "nodejs",
+                "software-development",
+                "front-end-development",
+                "angular",
+                "coding",
+                "technology"
+            ]
+        },
+        {
+            "id": "digital-marketing",
+            "postCount": 101018,
+            "group": 2,
+            "x": 11.03222942352295,
+            "y": 40.851585388183594,
+            "related_tags": [
+                "marketing",
+                "seo",
+                "social-media",
+                "social-media-marketing",
+                "content-marketing",
+                "advertising",
+                "online-marketing",
+                "business",
+                "marketing-strategies"
+            ]
+        },
+        {
+            "id": "seo",
+            "postCount": 311862,
+            "group": 2,
+            "x": 8.3877534866333,
+            "y": 44.63119125366211,
+            "related_tags": [
+                "ppc-marketing",
+                "digital-marketing",
+                "marketing",
+                "content-marketing",
+                "social-media",
+                "google",
+                "web-design",
+                "web-development",
+                "seo-services"
+            ]
+        },
+        {
+            "id": "ppc-marketing",
+            "postCount": 100492,
+            "group": 2,
+            "x": 11.849161148071289,
+            "y": 45.346195220947266,
+            "related_tags": [
+                "seo",
+                "digital-marketing",
+                "ppc",
+                "marketing",
+                "advertising",
+                "google-adwords",
+                "ecommerce",
+                "ppc-agency",
+                "social-media"
+            ]
+        },
+        {
+            "id": "web-development",
+            "postCount": 130492,
+            "group": 8,
+            "x": 54.13337707519531,
+            "y": 48.65768051147461,
+            "related_tags": [
+                "javascript",
+                "programming",
+                "web-design",
+                "software-development",
+                "react",
+                "css",
+                "front-end-development",
+                "technology",
+                "coding"
+            ]
+        },
+        {
+            "id": "software-development",
+            "postCount": 94509,
+            "group": 8,
+            "x": 50.3704833984375,
+            "y": 43.48014831542969,
+            "related_tags": [
+                "programming",
+                "web-development",
+                "software-engineering",
+                "javascript",
+                "technology",
+                "agile",
+                "startup",
+                "coding",
+                "tech"
+            ]
+        },
+        {
+            "id": "ux",
+            "postCount": 126041,
+            "group": 5,
+            "x": 41.763458251953125,
+            "y": -17.78110694885254,
+            "related_tags": [
+                "design",
+                "ui",
+                "user-experience",
+                "ux-design",
+                "product-design",
+                "design-thinking",
+                "ux-research",
+                "user-research",
+                "startup"
+            ]
+        },
+        {
+            "id": "social-media",
+            "postCount": 238709,
+            "group": 2,
+            "x": -7.383487224578857,
+            "y": 30.7154483795166,
+            "related_tags": [
+                "marketing",
+                "social-media-marketing",
+                "facebook",
+                "instagram",
+                "twitter",
+                "technology",
+                "politics",
+                "digital-marketing",
+                "writing"
+            ]
+        },
+        {
+            "id": "creativity",
+            "postCount": 107861,
+            "group": 7,
+            "x": 2.6197474002838135,
+            "y": -44.13483428955078,
+            "related_tags": [
+                "writing",
+                "art",
+                "inspiration",
+                "life-lessons",
+                "self-improvement",
+                "productivity",
+                "life",
+                "poetry",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "design",
+            "postCount": 252872,
+            "group": 5,
+            "x": 39.428077697753906,
+            "y": -18.397537231445312,
+            "related_tags": [
+                "ux",
+                "design-thinking",
+                "user-experience",
+                "ui",
+                "product-design",
+                "ux-design",
+                "startup",
+                "creativity",
+                "art"
+            ]
+        },
+        {
+            "id": "leadership",
+            "postCount": 143347,
+            "group": 7,
+            "x": 8.272284507751465,
+            "y": -10.740894317626953,
+            "related_tags": [
+                "management",
+                "entrepreneurship",
+                "business",
+                "startup",
+                "self-improvement",
+                "leadership-development",
+                "life-lessons",
+                "life",
+                "politics"
+            ]
+        },
+        {
+            "id": "art",
+            "postCount": 142724,
+            "group": 5,
+            "x": -11.24184513092041,
+            "y": -37.64836502075195,
+            "related_tags": [
+                "creativity",
+                "poetry",
+                "design",
+                "photography",
+                "writing",
+                "culture",
+                "artist",
+                "life",
+                "music"
+            ]
+        },
+        {
+            "id": "history",
+            "postCount": 79831,
+            "group": 5,
+            "x": -23.972299575805664,
+            "y": -29.24298095703125,
+            "related_tags": [
+                "politics",
+                "culture",
+                "travel",
+                "war",
+                "education",
+                "art",
+                "racism",
+                "philosophy",
+                "science"
+            ]
+        },
+        {
+            "id": "music",
+            "postCount": 221651,
+            "group": 5,
+            "x": -11.843494415283203,
+            "y": -34.55035400390625,
+            "related_tags": [
+                "hip-hop",
+                "culture",
+                "rock",
+                "art",
+                "poetry",
+                "life",
+                "pop-culture",
+                "music-business",
+                "rap"
+            ]
+        },
+        {
+            "id": "cryptocurrency",
+            "postCount": 265822,
+            "group": 0,
+            "x": -60.43677520751953,
+            "y": 35.26871109008789,
+            "related_tags": [
+                "blockchain",
+                "bitcoin",
+                "ethereum",
+                "crypto",
+                "ico",
+                "cryptocurrency-investment",
+                "investing",
+                "technology",
+                "fintech"
+            ]
+        },
+        {
+            "id": "business",
+            "postCount": 252285,
+            "group": 6,
+            "x": 9.734530448913574,
+            "y": -5.5961151123046875,
+            "related_tags": [
+                "entrepreneurship",
+                "startup",
+                "marketing",
+                "leadership",
+                "technology",
+                "life-lessons",
+                "life",
+                "tech",
+                "self-improvement"
+            ]
+        },
+        {
+            "id": "programming",
+            "postCount": 153950,
+            "group": 8,
+            "x": 52.60823059082031,
+            "y": 42.03962326049805,
+            "related_tags": [
+                "javascript",
+                "software-development",
+                "web-development",
+                "coding",
+                "technology",
+                "python",
+                "tech",
+                "java",
+                "software-engineering"
+            ]
+        },
+        {
+            "id": "artificial-intelligence",
+            "postCount": 123388,
+            "group": 10,
+            "x": 40.98588943481445,
+            "y": 14.567911148071289,
+            "related_tags": [
+                "machine-learning",
+                "technology",
+                "ai",
+                "data-science",
+                "deep-learning",
+                "chatbots",
+                "blockchain",
+                "startup",
+                "tech"
+            ]
+        },
+        {
+            "id": "tech",
+            "postCount": 186217,
+            "group": 6,
+            "x": 3.3198792934417725,
+            "y": 8.809565544128418,
+            "related_tags": [
+                "startup",
+                "technology",
+                "entrepreneurship",
+                "business",
+                "programming",
+                "design",
+                "blockchain",
+                "apple",
+                "women-in-tech"
+            ]
+        },
+        {
+            "id": "blockchain",
+            "postCount": 434421,
+            "group": 0,
+            "x": -57.46819305419922,
+            "y": 33.437294006347656,
+            "related_tags": [
+                "cryptocurrency",
+                "bitcoin",
+                "ethereum",
+                "ico",
+                "crypto",
+                "technology",
+                "fintech",
+                "blockchain-technology",
+                "startup"
+            ]
+        },
+        {
+            "id": "startup",
+            "postCount": 462800,
+            "group": 6,
+            "x": 8.562521934509277,
+            "y": -1.9799814224243164,
+            "related_tags": [
+                "entrepreneurship",
+                "business",
+                "venture-capital",
+                "tech",
+                "technology",
+                "marketing",
+                "leadership",
+                "life-lessons",
+                "innovation"
+            ]
+        },
+        {
+            "id": "google",
+            "postCount": 65460,
+            "group": 2,
+            "x": -1.8718558549880981,
+            "y": 23.755779266357422,
+            "related_tags": [
+                "movies",
+                "facebook",
+                "android",
+                "seo",
+                "streaming",
+                "social-media",
+                "videos",
+                "tech",
+                "usa"
+            ]
+        },
+        {
+            "id": "review",
+            "postCount": 52692,
+            "group": 3,
+            "x": -13.364114761352539,
+            "y": 88.06766510009766,
+            "related_tags": [
+                "movies",
+                "music",
+                "film",
+                "gaming",
+                "books",
+                "television",
+                "tv",
+                "culture",
+                "games"
+            ]
+        },
+        {
+            "id": "books",
+            "postCount": 102118,
+            "group": 7,
+            "x": 4.440719127655029,
+            "y": -55.14053726196289,
+            "related_tags": [
+                "reading",
+                "writing",
+                "book-review",
+                "fiction",
+                "self-improvement",
+                "literature",
+                "life",
+                "book-recommendations",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "film",
+            "postCount": 97994,
+            "group": 3,
+            "x": -11.975566864013672,
+            "y": 96.86508178710938,
+            "related_tags": [
+                "movies",
+                "tv-series",
+                "television",
+                "drama",
+                "tv-shows",
+                "streaming",
+                "filmmaking",
+                "cinema",
+                "movie-review"
+            ]
+        },
+        {
+            "id": "photography",
+            "postCount": 133657,
+            "group": 5,
+            "x": -12.791743278503418,
+            "y": -41.615421295166016,
+            "related_tags": [
+                "medium",
+                "art",
+                "travel",
+                "photos",
+                "cameras",
+                "creativity",
+                "photographer",
+                "photography-tips",
+                "nature"
+            ]
+        },
+        {
+            "id": "tv-series",
+            "postCount": 148807,
+            "group": 3,
+            "x": -6.507472515106201,
+            "y": 101.519775390625,
+            "related_tags": [
+                "television",
+                "tv-shows",
+                "drama",
+                "film",
+                "movies",
+                "reality",
+                "watch-online",
+                "full-episode",
+                "series"
+            ]
+        },
+        {
+            "id": "television",
+            "postCount": 218188,
+            "group": 3,
+            "x": -8.706899642944336,
+            "y": 104.48149108886719,
+            "related_tags": [
+                "tv-series",
+                "tv-shows",
+                "drama",
+                "movies",
+                "reality",
+                "comedy",
+                "film",
+                "social-media",
+                "series"
+            ]
+        },
+        {
+            "id": "drama",
+            "postCount": 59745,
+            "group": 3,
+            "x": -13.947602272033691,
+            "y": 103.42462158203125,
+            "related_tags": [
+                "television",
+                "tv-series",
+                "crime",
+                "tv-shows",
+                "comedy",
+                "action",
+                "film",
+                "romance",
+                "movies"
+            ]
+        },
+        {
+            "id": "poem",
+            "postCount": 82448,
+            "group": 1,
+            "x": 16.07969093322754,
+            "y": -83.93992614746094,
+            "related_tags": [
+                "poetry",
+                "love",
+                "poetry-on-medium",
+                "life",
+                "writing",
+                "poems-on-medium",
+                "haiku",
+                "relationships",
+                "life-lessons"
+            ]
+        },
+        {
+            "id": "short-story",
+            "postCount": 133929,
+            "group": 1,
+            "x": 4.184364318847656,
+            "y": -88.90789031982422,
+            "related_tags": [
+                "fiction",
+                "love",
+                "life",
+                "writing",
+                "humor",
+                "flash-fiction",
+                "relationships",
+                "poetry",
+                "life-lessons"
+            ]
+        },
+        {
+            "id": "politics",
+            "postCount": 364292,
+            "group": 9,
+            "x": -54.05510711669922,
+            "y": -14.150529861450195,
+            "related_tags": [
+                "donald-trump",
+                "2016-election",
+                "government",
+                "trump",
+                "news",
+                "hillary-clinton",
+                "economics",
+                "culture",
+                "elections"
+            ]
+        },
+        {
+            "id": "comedy",
+            "postCount": 52095,
+            "group": 3,
+            "x": -14.696383476257324,
+            "y": 106.8799819946289,
+            "related_tags": [
+                "television",
+                "drama",
+                "tv-series",
+                "humor",
+                "tv-shows",
+                "movies",
+                "satire",
+                "animation",
+                "romance"
+            ]
+        },
+        {
+            "id": "love",
+            "postCount": 309848,
+            "group": 1,
+            "x": 3.519688606262207,
+            "y": -82.60580444335938,
+            "related_tags": [
+                "relationships",
+                "poetry",
+                "life",
+                "life-lessons",
+                "dating",
+                "self-improvement",
+                "poem",
+                "short-story",
+                "fiction"
+            ]
+        },
+        {
+            "id": "personal-development",
+            "postCount": 110548,
+            "group": 7,
+            "x": 14.88818645477295,
+            "y": -50.01820373535156,
+            "related_tags": [
+                "self-improvement",
+                "life-lessons",
+                "personal-growth",
+                "life",
+                "entrepreneurship",
+                "productivity",
+                "inspiration",
+                "self",
+                "writing"
+            ]
+        },
+        {
+            "id": "writing",
+            "postCount": 276678,
+            "group": 7,
+            "x": 0.2568291425704956,
+            "y": -42.0429573059082,
+            "related_tags": [
+                "creativity",
+                "writing-tips",
+                "life",
+                "poetry",
+                "life-lessons",
+                "self-improvement",
+                "productivity",
+                "inspiration",
+                "medium"
+            ]
+        },
+        {
+            "id": "entrepreneurship",
+            "postCount": 311364,
+            "group": 7,
+            "x": 11.702287673950195,
+            "y": -8.383695602416992,
+            "related_tags": [
+                "startup",
+                "business",
+                "marketing",
+                "self-improvement",
+                "life-lessons",
+                "productivity",
+                "writing",
+                "life",
+                "leadership"
+            ]
+        },
+        {
+            "id": "relationships",
+            "postCount": 175404,
+            "group": 1,
+            "x": 0.5306311249732971,
+            "y": -76.01520538330078,
+            "related_tags": [
+                "love",
+                "life-lessons",
+                "life",
+                "poetry",
+                "dating",
+                "self-improvement",
+                "sex",
+                "self",
+                "mental-health"
+            ]
+        },
+        {
+            "id": "inspiration",
+            "postCount": 120035,
+            "group": 7,
+            "x": 5.790481090545654,
+            "y": -46.41074752807617,
+            "related_tags": [
+                "life-lessons",
+                "life",
+                "self-improvement",
+                "motivation",
+                "writing",
+                "creativity",
+                "entrepreneurship",
+                "poetry",
+                "personal-development"
+            ]
+        },
+        {
+            "id": "life",
+            "postCount": 446888,
+            "group": 1,
+            "x": 5.00945520401001,
+            "y": -68.08626556396484,
+            "related_tags": [
+                "life-lessons",
+                "self-improvement",
+                "poetry",
+                "love",
+                "writing",
+                "inspiration",
+                "relationships",
+                "self",
+                "entrepreneurship"
+            ]
+        },
+        {
+            "id": "motivation",
+            "postCount": 83739,
+            "group": 7,
+            "x": 9.677299499511719,
+            "y": -48.54189682006836,
+            "related_tags": [
+                "inspiration",
+                "life-lessons",
+                "self-improvement",
+                "life",
+                "entrepreneurship",
+                "productivity",
+                "success",
+                "personal-development",
+                "writing"
+            ]
+        },
+        {
+            "id": "travel",
+            "postCount": 326952,
+            "group": 5,
+            "x": -23.993947982788086,
+            "y": -36.057430267333984,
+            "related_tags": [
+                "life",
+                "photography",
+                "life-lessons",
+                "adventure",
+                "food",
+                "culture",
+                "tourism",
+                "india",
+                "traveling"
+            ]
+        },
+        {
+            "id": "self-improvement",
+            "postCount": 272560,
+            "group": 7,
+            "x": 13.519523620605469,
+            "y": -53.19721221923828,
+            "related_tags": [
+                "life-lessons",
+                "life",
+                "personal-development",
+                "productivity",
+                "inspiration",
+                "writing",
+                "entrepreneurship",
+                "self",
+                "self-awareness"
+            ]
+        },
+        {
+            "id": "fitness",
+            "postCount": 75733,
+            "group": 4,
+            "x": -19.76757049560547,
+            "y": -72.34126281738281,
+            "related_tags": [
+                "health",
+                "exercise",
+                "weight-loss",
+                "workout",
+                "running",
+                "gym",
+                "nutrition",
+                "motivation",
+                "self-improvement"
+            ]
+        },
+        {
+            "id": "mental-health",
+            "postCount": 158176,
+            "group": 1,
+            "x": -7.49138879776001,
+            "y": -71.84282684326172,
+            "related_tags": [
+                "life-lessons",
+                "life",
+                "depression",
+                "self-improvement",
+                "psychology",
+                "health",
+                "self",
+                "anxiety",
+                "relationships"
+            ]
+        },
+        {
+            "id": "health",
+            "postCount": 326233,
+            "group": 4,
+            "x": -18.476045608520508,
+            "y": -69.68556213378906,
+            "related_tags": [
+                "fitness",
+                "life",
+                "food",
+                "life-lessons",
+                "mental-health",
+                "self-improvement",
+                "healthcare",
+                "nutrition",
+                "weight-loss"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "source": "food",
+            "target": "health"
+        },
+        {
+            "source": "food",
+            "target": "travel"
+        },
+        {
+            "source": "food",
+            "target": "humor"
+        },
+        {
+            "source": "health",
+            "target": "covid19"
+        },
+        {
+            "source": "health",
+            "target": "mental-health"
+        },
+        {
+            "source": "health",
+            "target": "fitness"
+        },
+        {
+            "source": "health",
+            "target": "life"
+        },
+        {
+            "source": "health",
+            "target": "life-lessons"
+        },
+        {
+            "source": "health",
+            "target": "self-improvement"
+        },
+        {
+            "source": "health",
+            "target": "healthcare"
+        },
+        {
+            "source": "travel",
+            "target": "culture"
+        },
+        {
+            "source": "travel",
+            "target": "photography"
+        },
+        {
+            "source": "travel",
+            "target": "life"
+        },
+        {
+            "source": "travel",
+            "target": "life-lessons"
+        },
+        {
+            "source": "travel",
+            "target": "india"
+        },
+        {
+            "source": "humor",
+            "target": "life"
+        },
+        {
+            "source": "humor",
+            "target": "comedy"
+        },
+        {
+            "source": "humor",
+            "target": "politics"
+        },
+        {
+            "source": "humor",
+            "target": "writing"
+        },
+        {
+            "source": "humor",
+            "target": "life-lessons"
+        },
+        {
+            "source": "humor",
+            "target": "short-story"
+        },
+        {
+            "source": "humor",
+            "target": "fiction"
+        },
+        {
+            "source": "life-lessons",
+            "target": "life"
+        },
+        {
+            "source": "life-lessons",
+            "target": "self-improvement"
+        },
+        {
+            "source": "life-lessons",
+            "target": "inspiration"
+        },
+        {
+            "source": "life-lessons",
+            "target": "relationships"
+        },
+        {
+            "source": "life-lessons",
+            "target": "entrepreneurship"
+        },
+        {
+            "source": "life-lessons",
+            "target": "writing"
+        },
+        {
+            "source": "life-lessons",
+            "target": "personal-development"
+        },
+        {
+            "source": "life-lessons",
+            "target": "love"
+        },
+        {
+            "source": "life-lessons",
+            "target": "self"
+        },
+        {
+            "source": "life-lessons",
+            "target": "poetry"
+        },
+        {
+            "source": "life-lessons",
+            "target": "culture"
+        },
+        {
+            "source": "life-lessons",
+            "target": "productivity"
+        },
+        {
+            "source": "life-lessons",
+            "target": "education"
+        },
+        {
+            "source": "life-lessons",
+            "target": "christianity"
+        },
+        {
+            "source": "life-lessons",
+            "target": "creativity"
+        },
+        {
+            "source": "life-lessons",
+            "target": "leadership"
+        },
+        {
+            "source": "life-lessons",
+            "target": "business"
+        },
+        {
+            "source": "life-lessons",
+            "target": "startup"
+        },
+        {
+            "source": "life-lessons",
+            "target": "short-story"
+        },
+        {
+            "source": "life-lessons",
+            "target": "mental-health"
+        },
+        {
+            "source": "life",
+            "target": "fiction"
+        },
+        {
+            "source": "life",
+            "target": "poetry"
+        },
+        {
+            "source": "life",
+            "target": "culture"
+        },
+        {
+            "source": "life",
+            "target": "productivity"
+        },
+        {
+            "source": "life",
+            "target": "education"
+        },
+        {
+            "source": "life",
+            "target": "christianity"
+        },
+        {
+            "source": "life",
+            "target": "news"
+        },
+        {
+            "source": "life",
+            "target": "creativity"
+        },
+        {
+            "source": "life",
+            "target": "leadership"
+        },
+        {
+            "source": "life",
+            "target": "art"
+        },
+        {
+            "source": "life",
+            "target": "music"
+        },
+        {
+            "source": "life",
+            "target": "business"
+        },
+        {
+            "source": "life",
+            "target": "books"
+        },
+        {
+            "source": "life",
+            "target": "short-story"
+        },
+        {
+            "source": "life",
+            "target": "love"
+        },
+        {
+            "source": "life",
+            "target": "personal-development"
+        },
+        {
+            "source": "life",
+            "target": "writing"
+        },
+        {
+            "source": "life",
+            "target": "entrepreneurship"
+        },
+        {
+            "source": "life",
+            "target": "relationships"
+        },
+        {
+            "source": "life",
+            "target": "inspiration"
+        },
+        {
+            "source": "life",
+            "target": "self-improvement"
+        },
+        {
+            "source": "life",
+            "target": "self"
+        },
+        {
+            "source": "life",
+            "target": "mental-health"
+        },
+        {
+            "source": "self-improvement",
+            "target": "productivity"
+        },
+        {
+            "source": "self-improvement",
+            "target": "creativity"
+        },
+        {
+            "source": "self-improvement",
+            "target": "leadership"
+        },
+        {
+            "source": "self-improvement",
+            "target": "business"
+        },
+        {
+            "source": "self-improvement",
+            "target": "books"
+        },
+        {
+            "source": "self-improvement",
+            "target": "love"
+        },
+        {
+            "source": "self-improvement",
+            "target": "personal-development"
+        },
+        {
+            "source": "self-improvement",
+            "target": "writing"
+        },
+        {
+            "source": "self-improvement",
+            "target": "entrepreneurship"
+        },
+        {
+            "source": "self-improvement",
+            "target": "relationships"
+        },
+        {
+            "source": "self-improvement",
+            "target": "inspiration"
+        },
+        {
+            "source": "self-improvement",
+            "target": "self"
+        },
+        {
+            "source": "self-improvement",
+            "target": "self-awareness"
+        },
+        {
+            "source": "self-improvement",
+            "target": "mental-health"
+        },
+        {
+            "source": "inspiration",
+            "target": "creativity"
+        },
+        {
+            "source": "inspiration",
+            "target": "personal-development"
+        },
+        {
+            "source": "inspiration",
+            "target": "writing"
+        },
+        {
+            "source": "inspiration",
+            "target": "motivation"
+        },
+        {
+            "source": "inspiration",
+            "target": "entrepreneurship"
+        },
+        {
+            "source": "inspiration",
+            "target": "poetry"
+        },
+        {
+            "source": "relationships",
+            "target": "poetry"
+        },
+        {
+            "source": "relationships",
+            "target": "short-story"
+        },
+        {
+            "source": "relationships",
+            "target": "love"
+        },
+        {
+            "source": "relationships",
+            "target": "self"
+        },
+        {
+            "source": "relationships",
+            "target": "mental-health"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "technology"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "productivity"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "marketing"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "creativity"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "leadership"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "business"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "tech"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "startup"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "books"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "personal-development"
+        },
+        {
+            "source": "entrepreneurship",
+            "target": "writing"
+        },
+        {
+            "source": "writing",
+            "target": "fiction"
+        },
+        {
+            "source": "writing",
+            "target": "poetry"
+        },
+        {
+            "source": "writing",
+            "target": "movies"
+        },
+        {
+            "source": "writing",
+            "target": "productivity"
+        },
+        {
+            "source": "writing",
+            "target": "marketing"
+        },
+        {
+            "source": "writing",
+            "target": "social-media"
+        },
+        {
+            "source": "writing",
+            "target": "creativity"
+        },
+        {
+            "source": "writing",
+            "target": "art"
+        },
+        {
+            "source": "writing",
+            "target": "books"
+        },
+        {
+            "source": "writing",
+            "target": "short-story"
+        },
+        {
+            "source": "writing",
+            "target": "personal-development"
+        },
+        {
+            "source": "writing",
+            "target": "medium"
+        },
+        {
+            "source": "personal-development",
+            "target": "productivity"
+        },
+        {
+            "source": "personal-development",
+            "target": "personal-growth"
+        },
+        {
+            "source": "personal-development",
+            "target": "self"
+        },
+        {
+            "source": "love",
+            "target": "fiction"
+        },
+        {
+            "source": "love",
+            "target": "poetry"
+        },
+        {
+            "source": "love",
+            "target": "christianity"
+        },
+        {
+            "source": "love",
+            "target": "short-story"
+        },
+        {
+            "source": "love",
+            "target": "poem"
+        },
+        {
+            "source": "self",
+            "target": "mental-health"
+        },
+        {
+            "source": "comedy",
+            "target": "television"
+        },
+        {
+            "source": "politics",
+            "target": "culture"
+        },
+        {
+            "source": "politics",
+            "target": "covid19"
+        },
+        {
+            "source": "politics",
+            "target": "news"
+        },
+        {
+            "source": "politics",
+            "target": "social-media"
+        },
+        {
+            "source": "politics",
+            "target": "leadership"
+        },
+        {
+            "source": "politics",
+            "target": "donald-trump"
+        },
+        {
+            "source": "politics",
+            "target": "2016-election"
+        },
+        {
+            "source": "politics",
+            "target": "economics"
+        },
+        {
+            "source": "short-story",
+            "target": "fiction"
+        },
+        {
+            "source": "short-story",
+            "target": "poetry"
+        },
+        {
+            "source": "fiction",
+            "target": "poetry"
+        },
+        {
+            "source": "fiction",
+            "target": "books"
+        },
+        {
+            "source": "poetry",
+            "target": "poem"
+        },
+        {
+            "source": "poetry",
+            "target": "creativity"
+        },
+        {
+            "source": "poetry",
+            "target": "art"
+        },
+        {
+            "source": "poetry",
+            "target": "music"
+        },
+        {
+            "source": "movies",
+            "target": "film"
+        },
+        {
+            "source": "movies",
+            "target": "review"
+        },
+        {
+            "source": "movies",
+            "target": "google"
+        },
+        {
+            "source": "movies",
+            "target": "television"
+        },
+        {
+            "source": "movies",
+            "target": "culture"
+        },
+        {
+            "source": "movies",
+            "target": "tv-series"
+        },
+        {
+            "source": "film",
+            "target": "tv-series"
+        },
+        {
+            "source": "film",
+            "target": "television"
+        },
+        {
+            "source": "google",
+            "target": "seo"
+        },
+        {
+            "source": "television",
+            "target": "tv-series"
+        },
+        {
+            "source": "television",
+            "target": "tv-shows"
+        },
+        {
+            "source": "television",
+            "target": "drama"
+        },
+        {
+            "source": "television",
+            "target": "social-media"
+        },
+        {
+            "source": "culture",
+            "target": "music"
+        },
+        {
+            "source": "culture",
+            "target": "history"
+        },
+        {
+            "source": "culture",
+            "target": "art"
+        },
+        {
+            "source": "culture",
+            "target": "leadership"
+        },
+        {
+            "source": "technology",
+            "target": "startup"
+        },
+        {
+            "source": "technology",
+            "target": "blockchain"
+        },
+        {
+            "source": "technology",
+            "target": "tech"
+        },
+        {
+            "source": "technology",
+            "target": "artificial-intelligence"
+        },
+        {
+            "source": "technology",
+            "target": "programming"
+        },
+        {
+            "source": "technology",
+            "target": "business"
+        },
+        {
+            "source": "technology",
+            "target": "cryptocurrency"
+        },
+        {
+            "source": "technology",
+            "target": "innovation"
+        },
+        {
+            "source": "technology",
+            "target": "education"
+        },
+        {
+            "source": "technology",
+            "target": "machine-learning"
+        },
+        {
+            "source": "technology",
+            "target": "news"
+        },
+        {
+            "source": "technology",
+            "target": "ethereum"
+        },
+        {
+            "source": "technology",
+            "target": "javascript"
+        },
+        {
+            "source": "technology",
+            "target": "web-development"
+        },
+        {
+            "source": "technology",
+            "target": "social-media"
+        },
+        {
+            "source": "startup",
+            "target": "productivity"
+        },
+        {
+            "source": "startup",
+            "target": "marketing"
+        },
+        {
+            "source": "startup",
+            "target": "ux"
+        },
+        {
+            "source": "startup",
+            "target": "design"
+        },
+        {
+            "source": "startup",
+            "target": "leadership"
+        },
+        {
+            "source": "startup",
+            "target": "business"
+        },
+        {
+            "source": "startup",
+            "target": "artificial-intelligence"
+        },
+        {
+            "source": "startup",
+            "target": "tech"
+        },
+        {
+            "source": "startup",
+            "target": "blockchain"
+        },
+        {
+            "source": "startup",
+            "target": "venture-capital"
+        },
+        {
+            "source": "startup",
+            "target": "innovation"
+        },
+        {
+            "source": "blockchain",
+            "target": "bitcoin"
+        },
+        {
+            "source": "blockchain",
+            "target": "news"
+        },
+        {
+            "source": "blockchain",
+            "target": "finance"
+        },
+        {
+            "source": "blockchain",
+            "target": "ethereum"
+        },
+        {
+            "source": "blockchain",
+            "target": "cryptocurrency"
+        },
+        {
+            "source": "blockchain",
+            "target": "artificial-intelligence"
+        },
+        {
+            "source": "blockchain",
+            "target": "tech"
+        },
+        {
+            "source": "blockchain",
+            "target": "ico"
+        },
+        {
+            "source": "blockchain",
+            "target": "crypto"
+        },
+        {
+            "source": "blockchain",
+            "target": "fintech"
+        },
+        {
+            "source": "tech",
+            "target": "news"
+        },
+        {
+            "source": "tech",
+            "target": "business"
+        },
+        {
+            "source": "tech",
+            "target": "programming"
+        },
+        {
+            "source": "tech",
+            "target": "artificial-intelligence"
+        },
+        {
+            "source": "tech",
+            "target": "design"
+        },
+        {
+            "source": "tech",
+            "target": "apple"
+        },
+        {
+            "source": "artificial-intelligence",
+            "target": "machine-learning"
+        },
+        {
+            "source": "artificial-intelligence",
+            "target": "ai"
+        },
+        {
+            "source": "artificial-intelligence",
+            "target": "data-science"
+        },
+        {
+            "source": "programming",
+            "target": "machine-learning"
+        },
+        {
+            "source": "programming",
+            "target": "javascript"
+        },
+        {
+            "source": "programming",
+            "target": "web-development"
+        },
+        {
+            "source": "programming",
+            "target": "software-development"
+        },
+        {
+            "source": "programming",
+            "target": "python"
+        },
+        {
+            "source": "business",
+            "target": "marketing"
+        },
+        {
+            "source": "business",
+            "target": "finance"
+        },
+        {
+            "source": "business",
+            "target": "digital-marketing"
+        },
+        {
+            "source": "business",
+            "target": "leadership"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "bitcoin"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "news"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "finance"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "ethereum"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "crypto"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "ico"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "investing"
+        },
+        {
+            "source": "cryptocurrency",
+            "target": "fintech"
+        },
+        {
+            "source": "music",
+            "target": "art"
+        },
+        {
+            "source": "art",
+            "target": "creativity"
+        },
+        {
+            "source": "art",
+            "target": "design"
+        },
+        {
+            "source": "art",
+            "target": "photography"
+        },
+        {
+            "source": "bitcoin",
+            "target": "ethereum"
+        },
+        {
+            "source": "bitcoin",
+            "target": "crypto"
+        },
+        {
+            "source": "bitcoin",
+            "target": "ico"
+        },
+        {
+            "source": "bitcoin",
+            "target": "investing"
+        },
+        {
+            "source": "bitcoin",
+            "target": "finance"
+        },
+        {
+            "source": "bitcoin",
+            "target": "fintech"
+        },
+        {
+            "source": "bitcoin",
+            "target": "news"
+        },
+        {
+            "source": "ethereum",
+            "target": "ico"
+        },
+        {
+            "source": "ethereum",
+            "target": "crypto"
+        },
+        {
+            "source": "investing",
+            "target": "finance"
+        },
+        {
+            "source": "finance",
+            "target": "money"
+        },
+        {
+            "source": "finance",
+            "target": "fintech"
+        },
+        {
+            "source": "finance",
+            "target": "economics"
+        },
+        {
+            "source": "productivity",
+            "target": "creativity"
+        },
+        {
+            "source": "creativity",
+            "target": "design"
+        },
+        {
+            "source": "creativity",
+            "target": "photography"
+        },
+        {
+            "source": "education",
+            "target": "learning"
+        },
+        {
+            "source": "covid19",
+            "target": "coronavirus"
+        },
+        {
+            "source": "covid19",
+            "target": "mental-health"
+        },
+        {
+            "source": "mental-health",
+            "target": "depression"
+        },
+        {
+            "source": "mental-health",
+            "target": "psychology"
+        },
+        {
+            "source": "christianity",
+            "target": "spirituality"
+        },
+        {
+            "source": "machine-learning",
+            "target": "data-science"
+        },
+        {
+            "source": "machine-learning",
+            "target": "ai"
+        },
+        {
+            "source": "machine-learning",
+            "target": "python"
+        },
+        {
+            "source": "sports",
+            "target": "live-streaming"
+        },
+        {
+            "source": "news",
+            "target": "journalism"
+        },
+        {
+            "source": "news",
+            "target": "medium"
+        },
+        {
+            "source": "medium",
+            "target": "photography"
+        },
+        {
+            "source": "marketing",
+            "target": "social-media"
+        },
+        {
+            "source": "marketing",
+            "target": "digital-marketing"
+        },
+        {
+            "source": "marketing",
+            "target": "advertising"
+        },
+        {
+            "source": "marketing",
+            "target": "seo"
+        },
+        {
+            "source": "marketing",
+            "target": "ppc-marketing"
+        },
+        {
+            "source": "social-media",
+            "target": "digital-marketing"
+        },
+        {
+            "source": "social-media",
+            "target": "seo"
+        },
+        {
+            "source": "social-media",
+            "target": "ppc-marketing"
+        },
+        {
+            "source": "social-media",
+            "target": "facebook"
+        },
+        {
+            "source": "social-media",
+            "target": "instagram"
+        },
+        {
+            "source": "digital-marketing",
+            "target": "seo"
+        },
+        {
+            "source": "digital-marketing",
+            "target": "advertising"
+        },
+        {
+            "source": "digital-marketing",
+            "target": "ppc-marketing"
+        },
+        {
+            "source": "advertising",
+            "target": "ppc-marketing"
+        },
+        {
+            "source": "javascript",
+            "target": "web-development"
+        },
+        {
+            "source": "javascript",
+            "target": "software-development"
+        },
+        {
+            "source": "web-development",
+            "target": "seo"
+        },
+        {
+            "source": "web-development",
+            "target": "software-development"
+        },
+        {
+            "source": "seo",
+            "target": "ppc-marketing"
+        },
+        {
+            "source": "ppc-marketing",
+            "target": "ecommerce"
+        },
+        {
+            "source": "ux",
+            "target": "design"
+        },
+        {
+            "source": "tv-series",
+            "target": "tv-shows"
+        },
+        {
+            "source": "tv-series",
+            "target": "drama"
+        }
+    ]
+}
