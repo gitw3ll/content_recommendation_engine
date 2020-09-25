@@ -5,6 +5,8 @@ Returns color counts
 import sys
 import string
 import pandas as pd
+import matplotlib.pyplot as plt
+from math import pi
 
 # Clean text
 def clean(text):
@@ -26,6 +28,7 @@ def counter_df(text):
     return counter.reset_index()
     
 # Color to word database
+colors = ['red', 'orange', 'yellow','green', 'teal', 'blue', 'purple']
 color_db = {
     'purple_negative': ['mystery', 'mysterious', 'moodiness', 'moody', 'boredom', 'bored', 'bore', 'confusion', 'confuse', 'confused', 'disconnection', 'disconnect'],
     'purple_positive': ['connection', 'connect', 'wisdom', 'wise', 'spirituality', 'spiritual', 'royalty', 'royal, ''nobility', 'noble', 'luxury', 'luxurious', 'ambition', 'ambitious', 'wealth', 'wealthy', 'awaken', 'awake'],
@@ -50,6 +53,41 @@ def find_color(word):
             return key
     return ''
            
+def plot_color_score(df):
+    """
+    from https://python-graph-gallery.com/390-basic-radar-chart/
+    """
+    # number of variables
+    categories=colors
+    N = len(categories)
+
+    # We are going to plot the first line of the data frame.
+    # But we need to repeat the first value to close the circular graph:
+    values=df.values.tolist()
+    values += values[:1]
+
+    # What will be the angle of each axis in the plot? (we divide the plot / number of variable)
+    angles = [n / float(N) * 2 * pi for n in range(N)]
+    angles += angles[:1]
+
+    # Initialise the spider plot
+    ax = plt.subplot(111, polar=True)
+
+    # Draw one axe per variable + add labels labels yet
+    plt.xticks(angles[:-1], categories, color='grey', size=8)
+
+    # Draw ylabels
+    ax.set_rlabel_position(0)
+    plt.yticks([0,5,10], ["0", "5","10"], color="grey", size=7)
+    plt.ylim(-5,15)
+
+    # Plot data
+    ax.plot(angles, values, linewidth=1, linestyle='solid')
+
+    # Fill area
+    ax.fill(angles, values, 'b', alpha=0.1)
+    plt.show()
+
 def main():
     # Read file
     in_file = str(sys.argv[1])
@@ -64,10 +102,21 @@ def main():
 
     # Count colors
     data_df['color'] = data_df['word'].apply(find_color)
-    color_df = data_df.groupby('color').sum().drop([''])
+    color_df = data_df.groupby('color').sum().drop([''])['count']
+
+    # add colors that downt show up
+    for color in color_db.keys():
+        if color not in color_df.index:
+            color_df = color_df.append(pd.Series(0, index=[color]))
+
+    # sum positives and negatives
+    for color in colors:
+        color_df[color] = color_df[color+'_positive'] - color_df[color+'_negative']
+    color_df = color_df[colors]
 
     # Return results
     print(color_df)
+    plot_color_score(color_df)
 
 if __name__ == "__main__":
     main()
