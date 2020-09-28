@@ -81,10 +81,11 @@ def plot_color_score(df):
 def scrape_corpus(ser):
     page_response = requests.get(str(ser))
     soup = BeautifulSoup(page_response.content, 'html.parser')
+    title = soup.find('title')
     corpus = ''
     for el in soup.find_all('p'):
         corpus += el.get_text()
-    return corpus
+    return corpus, title
 
 # Color to word database
 colors = ['red', 'orange', 'yellow','green', 'teal', 'blue', 'purple']
@@ -110,7 +111,8 @@ color_db = {
 url = st.text_input("URL")
 
 if url:
-    text = scrape_corpus(url)
+    text, title = scrape_corpus(url)
+    st.title(title.string)
 
     # Clean text
     clean_corpus = clean(text)
