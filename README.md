@@ -1,16 +1,15 @@
 # Content Recommendation Engine (CRE) for W3LL
-Goal: to recommend media content (articles, videos, music, etc.) which will most suit their wellness needs.
+Goal: to recommend media content (articles, videos, music, etc.) to users which will most suit their wellness needs.
 
 ---
 
-
-## Scraping Medium Articles
+## Scraping (Medium Articles)
 uses [Scrapy](https://scrapy.org/)
 
 files:
-- `medium_scraper_tag_archive.py` : bulk scraper code
-- `scrapy_wrapper.py`: wrapper to run `medium_scraper_tag_archive.py` and set parameters
-- `medium_tag_crawler.py` : crawls through related tags 
+- `medium_archive_article_scraper.py` : bulk scraper code. Given tag and other parameters, scrapes information from articles in Medium archive.
+- `scrapy_wrapper.py`: wrapper to run `medium_archive_article_scraper.py` and set parameters.
+- `medium_tag_crawler.py` : different scraper code for scraping tags only and not articles. Mainly used for network visualization.
 - `notebooks/`: various notebooks to analyze scraped data
 - `optimizing/`: tests to speed up scraping process
 output:
@@ -18,7 +17,7 @@ output:
 - `scraped_data/`: JSON files of scrapped data end up here. Filenames: `startdateTAGenddate.json`
 
 to run scraper:
-- run `python scrapy_wrapper.py -tag TAG -start_date YYYMMDD -end_date YYYMMDD`
+- run `python scrapy_wrapper.py -tag TAG -start_date YYYMMDD -end_date YYYMMDD -clap_limit N --include_body`
 - arguments are optional, default parameters in `scrapy_wrapper.py`
 
 ## Text Analysis
