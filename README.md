@@ -12,9 +12,10 @@ files:
 - `medium_tag_crawler.py` : different scraper code for scraping tags only and not articles. Mainly used for network visualization.
 - `notebooks/`: various notebooks to analyze scraped data
 - `optimizing/`: tests to speed up scraping process
+
 output:
-- `logs/`: log files from scrapy end up here. Filenames: `startdateTAGenddate.log`
-- `scraped_data/`: JSON files of scrapped data end up here. Filenames: `startdateTAGenddate.json`
+- `logs/`: log files from scrapy end up here. Filenames: `startdate_TAG_enddate.log`
+- `scraped_data/`: JSON files of scrapped data end up here. Filenames: `startdate_TAG_enddate.json`
 
 to run scraper:
 - run `python scrapy_wrapper.py -tag TAG -start_date YYYMMDD -end_date YYYMMDD -clap_limit N --include_body`
