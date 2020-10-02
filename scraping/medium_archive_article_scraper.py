@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-based off https://github.com/AiswaryaSrinivas/Scraping-Medium-and-Data-Analysis/blob/master/medium_scrapper_tag_archive.py
+initially based off https://github.com/AiswaryaSrinivas/Scraping-Medium-and-Data-Analysis/blob/master/medium_scrapper_tag_archive.py
+
 This scrapper extracts data for a given date range for a particular Medium Tag
 
 to run:
-`scrapy runspider -a tag='tagSlug' -a start_date=YYYYmmdd -a end_date=YYYYmmdd medium_scraper_tag_archive.py`
-e.g. `scrapy runspider -a tag='wellness' -a start_date=20200101 -a end_date=20200601 medium_scraper_tag_archive.py`
+`scrapy runspider -a tag={tag} -a start_date={start_date} -a end_date={end_date} -a clap_limit={clap_limit} -a include_body={include_body} --logfile {log_file} medium_archive_article_scraper.py -o {output_file}`
+
+e.g. `scrapy runspider -a tag=wellness -a start_date=20200101 -a end_date=20200601 -a clap_limit=100 -a include_body=False --logfile logs/file.log medium_archive_article_scraper.py -o output.json`
 """
 
 import scrapy
@@ -14,8 +16,6 @@ from datetime import timedelta
 import os
 import re
 from scrapy.exporters import JsonItemExporter
-# from scrapy.utils.log import configure_logging
-
 
 
 class MediumPost(scrapy.Spider):
@@ -82,16 +82,10 @@ class MediumPost(scrapy.Spider):
             # # article_social_recommends_count = re.findall('"socialRecommendsCount":([0-9]+)', response_data) #not sure if this is ever non-zero
             date = response._url[-10:].replace('/','')
 
-            # self.total_articles +=len(article_urls)
             n_articles_to_add = sum([1 for clap in clap_count if clap >=int(self.clap_limit)])
             self.total_articles +=n_articles_to_add
             print('***** {0} articles on {1}, {2} total articles so far ****'.format(n_articles_to_add, date, self.total_articles))
 
-            # for url,claps in zip(article_urls,article_clap_counts):
-            #     if int(claps)>=int(self.clap_limit):
-            #         yield scrapy.Request(url,callback=self.parse)
-            #     else:
-            #         continue
 
             for i in range(len(titles)):
                 parsed_data = {"date":date,
@@ -122,34 +116,6 @@ class MediumPost(scrapy.Spider):
             body_text = ''
             for paragraph_key in paragraph_keys:
                     body_text+=response_data[paragraph_key]['text']
-
-
-
-            # date = re.findall('"datePublished":"([0-9-]+)T', response_data)[0]
-            #
-            # try:
-            #     tags= set(re.findall('"Tag:([a-z-]+)"', response_data))
-            # except:
-            #     tags = re.findall('href="/tag/([\w-]+?)"', response_data)
-            #
-            # css_title = response.css('title::text').getall()[0].split(' | ')
-            # try:
-            #     #doesn't work for all, but when it does it works better than css_title[0]
-            #     title = re.findall('"og:title" content="([\w .:,?!-/“]+)"', response_data)[0]
-            # except:
-            #     title = css_title[0]
-            # try:
-            #     author = re.findall('name="author" content="([\w .:,-]+)"', response_data)[0]
-            # except:
-            #     author = css_title[1][3:] #remove "by "
-            #
-            # responses_count = int(re.findall('"responsesCount":([0-9]+)', response_data)[0])
-            # claps = int(re.findall('"clapCount":([0-9]+)', response_data)[0])
-            # length = int(re.findall('value="([0-9]+) min read"', response_data)[0])
-            # url = response._url
-            # comments = None
-            # author_bio = None
-            # subtitle = None
 
             parsed_data['body'] = body_text
 

@@ -8,15 +8,20 @@ end_date = '20200701'
 clap_limit = '0'
 tag = 'health'
 output_dir = 'scraped_data/'
-scrapper_file = 'medium_scraper_tag_archive.py'
+scrapper_file = 'medium_archive_article_scraper.py'
 
 #command line arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-tag', default=tag)
-parser.add_argument('-start_date', default=start_date)
-parser.add_argument('-end_date', default=end_date)
-parser.add_argument('-clap_limit', default=clap_limit)
-parser.add_argument('--include_body', action='store_true')
+parser.add_argument('-tag', default=tag,
+                    help='Medium tag to search archive.')
+parser.add_argument('-start_date', default=start_date,
+                    help='Archive search start date. YYYYMMDD')
+parser.add_argument('-end_date', default=end_date,
+                    help='Archive search end date. YYYYMMDD')
+parser.add_argument('-clap_limit', default=clap_limit,
+                    help='Only include articles with claps greater than or equal to this number.')
+parser.add_argument('--include_body', action='store_true',
+                    help='If this argument is included, output will include text body of article. Significantly slows down run time.')
 args = parser.parse_args()
 
 #output files
