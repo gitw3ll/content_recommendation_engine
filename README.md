@@ -37,7 +37,7 @@ to run text_scorer:
 - enter URL of an article (Medium, NYT, WP, etc.) and see a radar chart showing a breakdown of the color score from the text analysis.
 - Requires [Streamlit](https://www.streamlit.io/) to run locally. Can be added to website.
 - To run locally:
-`streamlit text_scoring_app.py`
+`streamlit run text_scoring_app.py`
 
 ## Network Visualization of Tags on Medium
 [View current state](https://raw.githack.com/gitw3ll/content_recommendation_engine/master/visualization/networks.html)
