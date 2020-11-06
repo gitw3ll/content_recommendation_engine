@@ -1,8 +1,13 @@
-from fastapi import FastAPI
 
+# export FLASK_APP=app
+# export FLASK_ENV=development
+# flask run
+
+# https://elemental.medium.com/10-signs-the-pandemic-is-about-to-get-much-worse-cf261bf3885d
+
+import json
 from text_scorer import ColorScorer
-
-app = FastAPI()
+from flask import Flask, render_template, request
 
 COLOR_DICT = {
     'purple_negative': ['mystery', 'mysterious', 'moodiness', 'moody', 'boredom', 'bored', 'bore', 'confusion', 'confuse', 'confused', 'disconnection', 'disconnect'],
@@ -20,15 +25,19 @@ COLOR_DICT = {
     'red_negative': ['anger', 'angry', 'unsafe', 'warned', 'warn', 'warning', 'worry', 'worried', 'volatile', 'hopelessness', 'hopeless'],
     'red_positive': ['love', 'loving', 'passion', 'passionate', 'energy', 'energetic', 'power', 'powerful', 'strength', 'strong', 'heat', 'hot', 'desire', 'safe', 'safety', 'instinctive', 'instinct', 'security', 'secure', 'liberating', 'liberate']
     }
-ARTICLE_URL = "https://elemental.medium.com/10-signs-the-pandemic-is-about-to-get-much-worse-cf261bf3885d"
 
-@app.get('/')
-def home_page():
-    return "This is the Home Page"
+app = Flask(__name__)
 
-@app.get('/color_score')
-def color_scorer(url: dict):
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/color_score', methods=['POST'])
+def color_scorer():
+    print(f'Starting Color Scorer...')
+    url = request.form["url"]
+    print(f'url: {url}')
     cs = ColorScorer(COLOR_DICT)
-    results = cs.calculate_color_score(url["url"])
-    print('Calculated')
-    return results
+    results = cs.calculate_color_score(url)
+    # json_result = json.dumps(results)
+    return render_template('color_score_results.html', results=results)

@@ -44,18 +44,15 @@ class ColorScorer:
         self.corpus = corpus
         print(f'Article "{self.corpus_title}" scraped and loaded with length: {len(corpus)}!')
 
-    def calculate_color_score(self, url):
+    def get_text_color_score(self, text):
         """
         Input:
-            - url: URL to scrape and calculate color score
+            - text: text to calculate color score
         Returns a dictionary with the calculated color score for each color
         """
-        self.scrape_corpus(url)
-        clean_corpus = process_text(self.corpus)
-
         # Create word counts and generate dataframe
-        transformer = CountVectorizer(max_features=500).fit([clean_corpus])
-        counter = transformer.transform([clean_corpus])
+        transformer = CountVectorizer(max_features=500).fit([text])
+        counter = transformer.transform([text])
         word_count_df = pd.DataFrame({
             "word": transformer.get_feature_names(),
             "counts": counter.toarray()[0]
@@ -76,6 +73,17 @@ class ColorScorer:
         self.color_df = all_color_df[self.color_list]
         print(f'dict(self.color_df): {dict(self.color_df)}')
         return dict(self.color_df)
+        
+    def calculate_color_score(self, url):
+        """
+        Input:
+            - url: URL to scrape and calculate color score
+        Returns a dictionary with the calculated color score for each color
+        """
+        self.scrape_corpus(url)
+        clean_corpus = process_text(self.corpus)
+
+        return self.get_text_color_score(clean_corpus)
 
 
 
