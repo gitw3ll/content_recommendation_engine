@@ -1,0 +1,7 @@
+bs4
+flask
+matplotlib
+nltk
+pandas
+scikit-learn
+string
