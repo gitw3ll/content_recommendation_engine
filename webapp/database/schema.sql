@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS search_db;
+
+CREATE TABLE search_db (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_url TEXT NOT NULL,
+    red INTEGER NOT NULL,
+    yellow INTEGER NOT NULL,
+    purple INTEGER NOT NULL,
+    green INTEGER NOT NULL,
+    blue INTEGER NOT NULL,
+    orange INTEGER NOT NULL,
+    teal INTEGER NOT NULL
+);

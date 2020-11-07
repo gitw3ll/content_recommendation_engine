@@ -9,6 +9,8 @@ import json
 from text_scorer import ColorScorer
 from flask import Flask, render_template, request
 
+from database.database import get_db_connection
+
 COLOR_DICT = {
     'purple_negative': ['mystery', 'mysterious', 'moodiness', 'moody', 'boredom', 'bored', 'bore', 'confusion', 'confuse', 'confused', 'disconnection', 'disconnect'],
     'purple_positive': ['connection', 'connect', 'wisdom', 'wise', 'spirituality', 'spiritual', 'royalty', 'royal, ''nobility', 'noble', 'luxury', 'luxurious', 'ambition', 'ambitious', 'wealth', 'wealthy', 'awaken', 'awake'],
@@ -37,7 +39,30 @@ def color_scorer():
     print(f'Starting Color Scorer...')
     url = request.form["url"]
     print(f'url: {url}')
+
     cs = ColorScorer(COLOR_DICT)
     results = cs.calculate_color_score(url)
-    # json_result = json.dumps(results)
+    
+    # Inserting results into database
+    conn = get_db_connection('database/database.db')
+    conn.execute(
+        """
+        INSERT INTO search_db (article_url, red, yellow, purple, green, blue, orange, teal)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            url, 
+            results['red'], 
+            results['yellow'], 
+            results['purple'], 
+            results['green'], 
+            results['blue'], 
+            results['orange'], 
+            results['teal']
+        )
+    )
+    conn.commit()
+    conn.close()
+    print('Finished adding to database!')
+
     return render_template('color_score_results.html', results=results)
