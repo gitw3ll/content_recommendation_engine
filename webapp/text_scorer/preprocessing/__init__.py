@@ -1,1 +1,1 @@
-from ..preprocessing.preprocess import process_text
+from ..preprocessing.preprocess import process_text, get_synonyms

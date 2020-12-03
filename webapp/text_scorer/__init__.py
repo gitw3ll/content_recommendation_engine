@@ -1,1 +1,2 @@
 from text_scorer.color_scorer import ColorScorer
+from text_scorer.preprocessing import get_synonyms

@@ -5,28 +5,32 @@
 
 # https://elemental.medium.com/10-signs-the-pandemic-is-about-to-get-much-worse-cf261bf3885d
 
+import configparser
 import json
-from text_scorer import ColorScorer
+from ast import literal_eval
 from flask import Flask, render_template, request
 
+from text_scorer import ColorScorer, get_synonyms
 from database.database import get_db_connection
 
-COLOR_DICT = {
-    'purple_negative': ['mystery', 'mysterious', 'moodiness', 'moody', 'boredom', 'bored', 'bore', 'confusion', 'confuse', 'confused', 'disconnection', 'disconnect'],
-    'purple_positive': ['connection', 'connect', 'wisdom', 'wise', 'spirituality', 'spiritual', 'royalty', 'royal, ''nobility', 'noble', 'luxury', 'luxurious', 'ambition', 'ambitious', 'wealth', 'wealthy', 'awaken', 'awake'],
-    'blue_negative': ['coldness', 'cold', 'masculinity', 'masculine', 'male', 'disgust', 'disgusted', 'conflict', 'conflicting', 'aggression', 'aggressive'],
-    'blue_positive': ['intuition', 'imagination', 'imagine', 'tranquility', 'tranquil', 'security', 'secure', 'integrity', 'peace', 'peaceful', 'loyalty', 'loyal', 'faith', 'faithful', 'intelligence', 'intelligent'],
-    'teal_negative': ['femininity', 'feminine', 'female', 'hostility', 'hostile'],
-    'teal_positive': ['communication', 'communicate', 'expression', 'express', 'healing', 'heal', 'protection', 'protect', 'sophisticated', 'cleanse', 'cleansing'],
-    'green_negative': ['envy', 'envious', 'jealousy', 'jealous', 'guilt', 'guilty', 'fear', 'fearful', 'scared', 'judgmental', 'judge', 'judging', 'unforgiving', 'anxiety', 'anxious'],
-    'green_positive': ['compassion', 'trust', 'freshness', 'fresh', 'environment', 'new', 'money', 'fertile', 'health', 'healthy', 'grounded', 'reconnecting', 'balanced', 'balance', 'balancing'],
-    'yellow_negative': ['irresponsible', 'instability', 'grief', 'grieve', 'grieving', 'grieves', 'addiction', 'addict', 'addicted', 'insecurity', 'insecure', 'depression', 'depressed'],
-    'yellow_positive': ['confident', 'confidence', 'bright', 'sunny', 'energetic', 'warm', 'happy', 'happiness', 'perky', 'joy', 'joyful', 'intellect', 'intellectual'],
-    'orange_negative': ['ignorance', 'ignorant', 'sluggishness', 'sluggish', 'shame', 'ashamed', 'shameful', 'compulsiveness', 'compulsive', 'loneliness', 'lonely', 'alone', 'dependence', 'dependent'],
-    'orange_positive': ['courage', 'friendliness', 'friendly', 'success', 'successful', 'creativity', 'creative', 'openness', 'open', 'sexual', 'sexy', 'sex'],
-    'red_negative': ['anger', 'angry', 'unsafe', 'warned', 'warn', 'warning', 'worry', 'worried', 'volatile', 'hopelessness', 'hopeless'],
-    'red_positive': ['love', 'loving', 'passion', 'passionate', 'energy', 'energetic', 'power', 'powerful', 'strength', 'strong', 'heat', 'hot', 'desire', 'safe', 'safety', 'instinctive', 'instinct', 'security', 'secure', 'liberating', 'liberate']
-    }
+# Loading color dictionary for word mapping
+config = configparser.ConfigParser()
+config_read = config.read('color_dict.cfg')
+config.sections()
+COLOR_DICT = literal_eval(config['DEFAULT']['color_dict'])
+
+updated_color_dict = {}
+
+# Adding synonyms to the dictionary
+print('Updating dictionary with synonyms...')
+for color in COLOR_DICT.keys():
+    syn_list = []
+    for word in COLOR_DICT[color]:
+        syn_list.append(get_synonyms(word))
+    # flatten list of lists and gets unique words
+    flat_syn_list = list(set([word for sublist in syn_list for word in sublist]))
+    updated_color_dict[color] = flat_syn_list
+print('Finished updating!')
 
 app = Flask(__name__)
 
@@ -35,34 +39,55 @@ def index():
     return render_template('index.html')
 
 @app.route('/color_score', methods=['POST'])
-def color_scorer():
-    print(f'Starting Color Scorer...')
+def color_scorer(update:bool=True):
+    print(f'Starting Color Scorer with update: {update}...')
     url = request.form["url"]
     print(f'url: {url}')
 
-    cs = ColorScorer(COLOR_DICT)
-    results = cs.calculate_color_score(url)
-    
-    # Inserting results into database
+    # Establishing database connection
     conn = get_db_connection('database/database.db')
-    conn.execute(
+
+    # Checking if results exist
+    cur = conn.cursor()
+    cur.execute(
         """
-        INSERT INTO search_db (article_url, red, yellow, purple, green, blue, orange, teal)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        SELECT *
+        FROM search_db
+        WHERE article_url = ?
         """,
-        (
-            url, 
-            results['red'], 
-            results['yellow'], 
-            results['purple'], 
-            results['green'], 
-            results['blue'], 
-            results['orange'], 
-            results['teal']
+        (url,)
         )
-    )
-    conn.commit()
-    conn.close()
-    print('Finished adding to database!')
+    
+    # Getting results
+    results = cur.fetchone()
+    if results is not None and not update:
+        print(f'Already exists in database!')
+    else:
+        print("No existing record found!")
+        # Running analysis
+        cs = ColorScorer(updated_color_dict)
+        results = cs.calculate_color_score(url)
+        
+        print("Adding results to database...")
+        # Adding results into database
+        conn.execute(
+            """
+            INSERT INTO search_db (article_url, red, yellow, purple, green, blue, orange, teal)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                url, 
+                results['red'], 
+                results['yellow'], 
+                results['purple'], 
+                results['green'], 
+                results['blue'], 
+                results['orange'], 
+                results['teal']
+            )
+        )
+        conn.commit()
+        conn.close()
+        print('Finished adding to database!')
 
     return render_template('color_score_results.html', results=results)

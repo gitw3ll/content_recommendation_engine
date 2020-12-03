@@ -1,7 +1,7 @@
 import string
 import nltk
 nltk.download('stopwords')
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords, wordnet
 nltk.download('wordnet')
 from nltk.stem.wordnet import WordNetLemmatizer
 
@@ -32,3 +32,9 @@ def process_text(text):
     lemmatized = ' '.join(lemmatized)
     
     return lemmatized
+
+def get_synonyms(word):
+    """
+        Returns a list of synonyms for the word
+    """
+    return [lemma.name() for synset in wordnet.synsets(word) for lemma in synset.lemmas()]
