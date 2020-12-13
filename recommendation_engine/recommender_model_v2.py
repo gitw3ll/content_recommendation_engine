@@ -81,6 +81,6 @@ class RecommenderModel:
         recommendations = self.model.recommend(user_index, user_data, N=n_predict)
 
         item_indices, scores = map(list, zip(*recommendations))
-        titles = [self.train_data['title'][index] for index in item_indices]
+        titles = [self.data['title'][index] for index in item_indices]
 
         return dict(zip(titles, scores))
