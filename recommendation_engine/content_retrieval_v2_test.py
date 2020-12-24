@@ -1,6 +1,6 @@
 from content_retrieval_v2 import ContentRetrieval
 
-path =  r'C:\Users\Vikram\OneDrive\Documents\Videos\Documents\RecommenderModelData'
+path =  r'C:\path\to\RecommenderModelData'
 
 c = ContentRetrieval()
 
