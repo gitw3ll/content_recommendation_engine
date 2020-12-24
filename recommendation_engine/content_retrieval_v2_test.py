@@ -2,10 +2,10 @@ from content_retrieval_v2 import ContentRetrieval
 
 path =  r'C:\path\to\RecommenderModelData'
 
-c = ContentRetrieval()
+cont_ret = ContentRetrieval()
 
-c.load_preprocess(path)
+cont_ret.load_preprocess(path)
 
-a = c.retrieve_content(user_id=50, wellness_metric='Emotional Score', similar_users=5, content_per_user=3)
+similar_content = cont_ret.retrieve_content(user_id=50, wellness_metric='Emotional Score', similar_users=5, content_per_user=3)
 
-print(a)
+print(similar_content)
