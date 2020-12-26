@@ -63,7 +63,9 @@ class ContentRetrieval:
         closest_ids_list = list(closest_emotional['personId'])
         
         similar_content = deque([])
-
+        
+        # Add retrieved content then check for any repeated content and remove it
+        
         for num in closest_ids_list:
             similar_content.append(list(self.content_data.loc[self.content_data['person_id'] == num]['title'][:content_per_user]))
             
