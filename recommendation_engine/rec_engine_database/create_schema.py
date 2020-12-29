@@ -12,7 +12,7 @@ conn.executescript('''CREATE TABLE user_data (person_id int, content_id int, tit
 conn.executescript('''CREATE TABLE content_data (content_id int, title text)''')
 
 
-with open('../database_schema.sql', 'w') as f:
+with open('../rec_database_schema.sql', 'w') as f:
     for line in conn.iterdump():
        f.write('%s\n' % line)
         
