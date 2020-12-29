@@ -16,9 +16,3 @@ with open('../database_schema.sql', 'w') as f:
     for line in conn.iterdump():
        f.write('%s\n' % line)
         
-        
-        
-#f = open('../database_schema.sql')
-#conn.executescript(f.read())
-
-#conn.close()
