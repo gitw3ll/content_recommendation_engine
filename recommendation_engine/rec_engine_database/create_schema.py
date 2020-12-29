@@ -1,5 +1,7 @@
-import sqlite3
+#It is probably better to do all of this in the command line
+#For whatever reason, running this code created an SQL file without the DROP TABLE... executions
 
+import sqlite3
 
 conn = sqlite3.connect('user_content_data.db')
 
