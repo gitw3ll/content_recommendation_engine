@@ -9,7 +9,7 @@ conn.executescript('''DROP TABLE IF EXISTS user_data''')
 
 conn.executescript('''DROP TABLE IF EXISTS content_data''')
 
-conn.executescript('''CREATE TABLE user_data (person_id int, content_id int, title text)''')
+conn.executescript('''CREATE TABLE user_data (person_id int, event_type text, content_id int)''')
 
 conn.executescript('''CREATE TABLE content_data (content_id int, title text)''')
 
