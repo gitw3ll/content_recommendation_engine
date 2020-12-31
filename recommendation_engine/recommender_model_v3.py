@@ -30,7 +30,6 @@ class RecommenderModel:
 
         df = self.articles_df.merge(self.interactions_df, on='content_id')
         df['eventStrength'] = df['event_type'].apply(lambda x: self.event_type_strength[x])
-        
         df = df.drop_duplicates()
         df = df.groupby(['person_id', 'content_id', 'title']).sum().reset_index()
 
