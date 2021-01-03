@@ -9,10 +9,13 @@ conn.executescript('''DROP TABLE IF EXISTS user_data''')
 
 conn.executescript('''DROP TABLE IF EXISTS content_data''')
 
+conn.executescript('''DROP TABLE IF EXISTS scores_data''')
+
 conn.executescript('''CREATE TABLE user_data (person_id int, event_type text, content_id int)''')
 
 conn.executescript('''CREATE TABLE content_data (content_id int, title text)''')
 
+conn.executescript('''CREATE TABLE scores_data (person_id int, mental int, emotional int, diet int, wq int)''')
 
 with open('../rec_database_schema.sql', 'w') as f:
     for line in conn.iterdump():
